@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Menu</title>
+    <style>
+      .user-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="avatar.jpg" alt="Avatar" id="avatar" onclick="toggleUserMenu();" />
+    <div class="user-menu" id="userMenu">
+      <ul>
+        <li><a href="#">Chức năng 1</a></li>
+        <li><a href="#">Chức năng 2</a></li>
+        <li><a href="#">Chức năng Logout</a></li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleUserMenu() {
+        var userMenu = document.getElementById("userMenu");
+        if (userMenu.style.display === "block") {
+          userMenu.style.display = "none";
+        } else {
+          userMenu.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
