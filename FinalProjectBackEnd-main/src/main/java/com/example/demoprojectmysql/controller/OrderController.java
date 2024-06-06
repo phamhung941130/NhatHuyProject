@@ -24,10 +24,21 @@ public class OrderController {
         return orderService.getAll();
     }
 
+    @GetMapping("/get-count")
+    public int getCount(@RequestParam String username){
+        return orderService.countByAccount_Username(username);
+    }
+
+    @GetMapping("/get-by-accountID")
+    public List<Order> getByAccountID(@RequestParam int accountID){
+
+        return orderService.getByAccountID(accountID);
+    }
+
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping("/get-bt-status")
-    public List<Order> findByStatus(@RequestParam OrderStatus status){
-        return orderService.findByStatus(status);
+    @GetMapping("/get-by-status")
+    public List<Order> findByStatus(@RequestParam int accountID, OrderStatus status){
+        return orderService.findAllByAccount_IdAndOrderStatus(accountID,status);
     }
 
     @PreAuthorize("hasAuthority('USER')")

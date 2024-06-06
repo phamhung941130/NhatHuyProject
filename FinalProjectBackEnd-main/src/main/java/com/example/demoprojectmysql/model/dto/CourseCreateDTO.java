@@ -10,7 +10,12 @@ import javax.validation.constraints.NotBlank;
 public class CourseCreateDTO {
     @NotBlank(message = "Tên khóa học không được để trống")
     private String courseName;
+    private String image;
     private int price;
-    private CourseStatus Status;
-    private CourseType courseType;
+    private int lessionNumber;
+    private String courseType;
+    private String status;
+    private int studentNumber;
+    private int teacherId;
+    private String courseDescription;
 }

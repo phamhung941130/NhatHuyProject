@@ -6,8 +6,10 @@ import com.example.demoprojectmysql.model.dto.AccountCreateDTO;
 import com.example.demoprojectmysql.model.dto.AccountLoginResponse;
 import com.example.demoprojectmysql.model.entity.AccountStatus;
 import com.example.demoprojectmysql.model.entity.Account;
+import com.example.demoprojectmysql.model.entity.Order;
 import com.example.demoprojectmysql.model.entity.Role;
 import com.example.demoprojectmysql.repository.AccountRepository;
+import com.example.demoprojectmysql.repository.OrderRepository;
 import com.example.demoprojectmysql.service.impl.MailSenderService;
 import com.example.demoprojectmysql.utils.JWTTokenUtils;
 import org.springframework.beans.BeanUtils;
@@ -28,6 +30,8 @@ import java.util.Optional;
 public class AuthController {
     @Autowired
     private AccountRepository accountRepository;
+    @Autowired
+    private OrderRepository orderRepository;
     @Autowired
     private JWTTokenUtils jwtTokenUtils;
     @Autowired
@@ -64,6 +68,7 @@ public class AuthController {
     public AccountLoginResponse loginJWT(@RequestParam String username,@RequestParam String password){
         // Bước1: Kiểm tra username
         Optional<Account> accountOptional = accountRepository.findByUsername(username);
+        int count = orderRepository.countByAccount_Username(username);
         if (accountOptional.isEmpty()){
             throw new CustomException(ErrorResponseEnum.LOGIN_USERNAME_NOT_EXISTED);
         }
@@ -77,6 +82,7 @@ public class AuthController {
         }
         AccountLoginResponse response = new AccountLoginResponse();
         BeanUtils.copyProperties(account, response);
+        response.setQuantity_Order(count);
 
         // Bước3: Tạo ra token
         String token = jwtTokenUtils.createAccessToken(response);

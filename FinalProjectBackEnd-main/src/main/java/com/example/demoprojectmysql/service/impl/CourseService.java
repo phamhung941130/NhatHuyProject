@@ -6,7 +6,11 @@ import com.example.demoprojectmysql.model.dto.CourseCreateDTO;
 import com.example.demoprojectmysql.model.dto.CourseUpdateDTO;
 import com.example.demoprojectmysql.model.dto.SearchCourseRequest;
 import com.example.demoprojectmysql.model.entity.Course;
+import com.example.demoprojectmysql.model.entity.CourseStatus;
+import com.example.demoprojectmysql.model.entity.CourseType;
+import com.example.demoprojectmysql.model.entity.Teacher;
 import com.example.demoprojectmysql.repository.CourseRepository;
+import com.example.demoprojectmysql.repository.TeacherRepository;
 import com.example.demoprojectmysql.repository.specification.CourseSpecification;
 import com.example.demoprojectmysql.service.ICourseService;
 import lombok.AllArgsConstructor;
@@ -27,6 +31,8 @@ import java.util.Optional;
 public class CourseService implements ICourseService {
     @Autowired
     private CourseRepository courserepository;
+    @Autowired
+    private TeacherRepository teacherRepository;
     @Override
     public List<Course> getAll() {
         return courserepository.findAll();
@@ -62,16 +68,29 @@ public class CourseService implements ICourseService {
         if(checkCourseName){
             throw new CustomException(ErrorResponseEnum.COURSE_NAME_EXISTED);
         }
+       CourseType courseType = CourseType.valueOf(dto.getCourseType());
+        CourseStatus courseStatus = CourseStatus.valueOf(dto.getStatus());
+        Optional<Teacher> optionalTeacher = teacherRepository.findById(dto.getTeacherId());
         Course course = new Course();
         BeanUtils.copyProperties(dto, course);
+        course.setCourseType(courseType);
+        course.setTeacher(optionalTeacher.get());
+        course.setStatus(courseStatus);
         return courserepository.save(course);
     }
     @Override
     public Course update(CourseUpdateDTO dto) {
         Optional<Course> optionalCourse = courserepository.findById(dto.getId());
         if (optionalCourse.isPresent()) {
-            Course course = optionalCourse.get();
+            CourseType courseType = CourseType.valueOf(dto.getCourseType());
+            CourseStatus courseStatus = CourseStatus.valueOf(dto.getStatus());
+            Optional<Teacher> optionalTeacher = teacherRepository.findById(dto.getTeacherId());
+            Course course = new Course();
             BeanUtils.copyProperties(dto, course);
+            course.setCourseType(courseType);
+            course.setTeacher(optionalTeacher.get());
+            course.setStatus(courseStatus);
+
             return courserepository.save(course);
         }
         return null;

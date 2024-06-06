@@ -34,7 +34,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 // config những API ko cần xác thực
-                .antMatchers("api/not-authenticated","/api/v1/auth/login-jwt").permitAll()
+                .antMatchers("api/not-authenticated","/api/v1/auth/login-jwt","/api/v1/course/search").permitAll()
 
 // Config những API phải có Authority là ADMIN thì mới được truy cập
                  //.antMatchers(HttpMethod.GET,"/api/v1/account/*").hasAuthority("ADMIN")
