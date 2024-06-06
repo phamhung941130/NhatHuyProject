@@ -17,8 +17,17 @@ public class Course extends Base {
     @Column(name = "NAME", length = 50, unique = true, nullable = false)
     private String courseName;
 
+    @Column(name = "IMAGE", length = 50, unique = true, nullable = false)
+    private String image;
+
     @Column(name = "PRICE", nullable = false)
     private int price;
+
+    @Column(name = "LessionNumber", nullable = false)
+    private int lessionNumber;
+
+    @Column(name = "StudentNumber", nullable = false)
+    private int studentNumber;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
@@ -29,8 +38,8 @@ public class Course extends Base {
     private CourseType courseType;
 
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "COMPANY_ID") // Tên cột của khoá ngoại trong BD
-    private Company company;
+    @JoinColumn(name = "TEACHER_ID") // Tên cột của khoá ngoại trong BD
+    private Teacher teacher;
 
     @Column(name = "courseDescription", length = 500)
     private String courseDescription;

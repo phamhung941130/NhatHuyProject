@@ -8,10 +8,11 @@ import java.util.List;
 
 public interface IOderService {
     List<Order> getAll();
-    List<Order> findByStatus(OrderStatus status);
+    List<Order> findAllByAccount_IdAndOrderStatus(int accountID,OrderStatus status);
     Order create(OrderCreateDTO dto);
     Order buyCourse (int orderId);
     Order cancelOrder (int orderId);
-
+    List<Order> getByAccountID(int accountID);
+    int countByAccount_Username(String username);
 
 }

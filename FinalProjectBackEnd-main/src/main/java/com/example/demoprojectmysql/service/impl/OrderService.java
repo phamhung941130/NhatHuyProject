@@ -34,8 +34,8 @@ public class OrderService implements IOderService {
     }
 
     @Override
-    public List<Order> findByStatus(OrderStatus status) {
-        return orderRepository.findAllByOrderStatus(status);
+    public List<Order> findAllByAccount_IdAndOrderStatus(int accountID,OrderStatus status) {
+        return orderRepository.findAllByAccount_IdAndOrderStatus(accountID,status);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class OrderService implements IOderService {
             Order order = new Order();
             order.setAccount(account);
             order.setCourse(course);
-            order.setQuantity(dto.getQuantity());
+//            order.setQuantity(dto.getQuantity());
             order.setOrderStatus(OrderStatus.PENDING);
             return orderRepository.save(order);
         }
@@ -76,6 +76,16 @@ public class OrderService implements IOderService {
             return orderRepository.save(order);
         }
         return null;
+    }
+
+    @Override
+    public List<Order> getByAccountID(int accountID) {
+        return orderRepository.findByAccount_Id(accountID);
+    }
+
+    @Override
+    public int countByAccount_Username(String username) {
+        return orderRepository.countByAccount_Username(username);
     }
 
 }

@@ -6,6 +6,5 @@ import lombok.Data;
 public class OrderCreateDTO {
     private int courseId;
     private int accountId;
-    private int quantity;
 
 }

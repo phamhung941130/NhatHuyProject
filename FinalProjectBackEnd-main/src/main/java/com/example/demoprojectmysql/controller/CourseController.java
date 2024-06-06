@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/course")
 @Validated
+@CrossOrigin(value = "*")
     public class CourseController {
         @Autowired
         private CourseService courseService;
@@ -37,6 +38,7 @@ import java.util.List;
 
         @PostMapping("/search")
         public Page<Course> search(@RequestBody SearchCourseRequest request) {
+
             return courseService.search(request);
         }
 
