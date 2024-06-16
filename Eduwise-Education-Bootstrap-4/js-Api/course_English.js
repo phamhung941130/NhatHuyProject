@@ -1,6 +1,6 @@
 "use strict";
 
-let courseName1 = "";
+let courseName = "";
 let minPrice1 = 0;
 let maxPrice1 = 0;
 let status1 = "";
@@ -14,6 +14,19 @@ let size = 3;
 let sortField = "id";
 let sortType = "ASC";
 let apiBase = "http://localhost:7777/api/v1/course/";
+
+$(document).ready(function () {
+  $("#search_input").on("input", function (event) {
+    event.preventDefault();
+    courseName = $("#search_input").val();
+    if (courseName) {
+      $("#header_inner").hide();
+    } else {
+      $("#header_inner").show();
+    }
+    getListCourse();
+  });
+});
 
 $(function () {
   buildManager();
@@ -55,6 +68,11 @@ function CourseCreateRequest(id, courseName, image, price, lessionNumber, studen
   this.courseDescription = courseDescription;
 }
 
+function CreatOrderRequest(accountId, courseId) {
+  this.accountId = accountId;
+  this.courseId = courseId;
+}
+
 function getListCourse() {
   if ("USER" === localStorage.getItem("role") || localStorage.getItem("role") === null) {
     isManagerCourse = false;
@@ -63,7 +81,7 @@ function getListCourse() {
     $("#button-add").empty().append(`<button class="btn btn-primary" style="color: aliceblue;" onclick="addCourse()"><ion-icon name="add-outline"></ion-icon>
       Add Course</button>`);
   }
-  let request = new CourseSearchRequest(courseName1, minPrice1, maxPrice1, status1, courseType, pageNumber, size, sortField, sortType);
+  let request = new CourseSearchRequest(courseName, minPrice1, maxPrice1, status1, courseType, pageNumber, size, sortField, sortType);
   $.ajax({
     url: apiBase + "search",
     type: "POST",
@@ -156,23 +174,29 @@ function nextPage() {
   getListCourse();
 }
 
+function formatVND(amount) {
+  return amount.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+}
+
 function fillData(data) {
   $("#course_item").empty();
 
   data.forEach(function (element) {
+    const priceNumber = Number(element.price);
+    let price_VN = formatVND(priceNumber);
     let text = `<div class="col-12 col-sm-6 col-md-6 col-lg-4">
       <div class="single-courses">
         <div class="courses_banner_wrapper">
           <div class="courses_banner">
-            <a href="#"><img src="${element.image}" alt="" class="img-fluid" /></a>
+            <a href="course_Detail.html" ><img src="${element.image}" alt="" class="img-fluid" /></a>
           </div>
           <div class="purchase_price">
-            <a href="#" class="read_more-btn">${element.price}VNĐ</a>
+            <a href="#" class="read_more-btn">${price_VN}</a>
           </div>
         </div>
         <div class="courses_info_wrapper">
           <div class="courses_title">
-            <h3><a href="#">${element.courseName}</a></h3>
+            <h3><a href="course_Detail.html" onclick="renameCourse('${element.courseName}')">${element.courseName}</a></h3>
             <div class="teachers_name">Teacher - <a href="#" title="">${element.teacher.name}</a></div>
           </div>
           <div class="courses_info">
@@ -184,8 +208,8 @@ function fillData(data) {
             ${
               isManagerCourse
                 ? `<a href="#" class="cart_btn" onclick="editCourse('${element.id}', '${element.courseName}', '${element.image}', '${element.price}', '${element.courseDescription}', '${element.studentNumber}','${element.lessionNumber}','${element.status}','${element.teacher.id}','${element.courseType}')">Update</a>
-                <a href="#" class="cart_btn" onclick="confirmDeleteCourse('${element.id}')">Delete</a>`
-                : `<a href="#" class="cart_btn">Add to Cart</a>`
+              `
+                : `<a href="#" class="cart_btn" onclick="addToBasket('${element.id}')">Add to Cart</a>`
             }
           </div>
         </div>
@@ -298,4 +322,65 @@ function deleteCourse() {
       getListCourse();
     },
   });
+}
+
+function addToBasket(courseId) {
+  let text = "Bạn có chắc mua khóa học?.";
+  if (confirm(text) == true) {
+    // Khởi tạo các gía trị cho request
+    let accountId = localStorage.getItem("id");
+    let request = new CreatOrderRequest(accountId, courseId);
+    console.log("coursrID:", courseId, "  accountID:", accountId);
+
+    //   ------------------------------------- API CHO SẢN PHẨM VÀO GIỎ -------------------------------------
+    $.ajax({
+      url: "http://localhost:7777/api/v1/order/create",
+      type: "POST",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"));
+      },
+      contentType: "application/json",
+      data: JSON.stringify(request),
+      error: function (err) {
+        console.log(err);
+        confirm(err.responseJSON.message);
+      },
+      success: function (data) {
+        showAlrtSuccess();
+        upQuantity();
+        getListCourse();
+      },
+    });
+  }
+}
+
+function upQuantity() {
+  $.ajax({
+    url: `http://localhost:7777/api/v1/order/get-count?username=${localStorage.getItem("username")}&status=PENDING`,
+    type: "GET",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"));
+    },
+    contentType: "application/json",
+    error: function (err) {
+      console.log(err);
+      confirm(err.responseJSON.message);
+    },
+    success: function (data) {
+      document.getElementById("upQuantity").innerHTML = data;
+    },
+  });
+}
+
+function renameCourse(courseName) {
+  console.log("test name", courseName);
+  document.getElementById("course_name").innerHTML = courseName;
+}
+
+function showAlrtSuccess() {
+  $("#success-alert")
+    .fadeTo(2000, 500)
+    .slideUp(500, function () {
+      $("#success-alert").slideUp(3000);
+    });
 }

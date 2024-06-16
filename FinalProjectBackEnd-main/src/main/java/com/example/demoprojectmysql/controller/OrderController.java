@@ -25,8 +25,8 @@ public class OrderController {
     }
 
     @GetMapping("/get-count")
-    public int getCount(@RequestParam String username){
-        return orderService.countByAccount_Username(username);
+    public int getCount(@RequestParam String username, OrderStatus status){
+        return orderService.countByAccount_UsernameAndStatus(username,status);
     }
 
     @GetMapping("/get-by-accountID")

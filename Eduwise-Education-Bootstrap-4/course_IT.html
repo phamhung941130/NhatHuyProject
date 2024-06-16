@@ -84,43 +84,24 @@
             <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
               <ul class="navbar-nav nav lavalamp ml-auto menu">
                 <li class="nav-item">
-                  <a href="index.html" class="nav-link active">Home</a>
+                  <a href="index.html" class="nav-link active">Trang chủ</a>
                 </li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">Courses</a>
+                  <a href="#" class="nav-link">Khóa Học</a>
                   <ul class="navbar-nav nav mx-auto">
-                    <li class="nav-item"><a href="course_IT.html" class="nav-link">IT Develop</a></li>
-                    <li class="nav-item"><a href="course_softSkills.html" class="nav-link">Soft Skills</a></li>
-                    <li class="nav-item"><a href="course_English.html" class="nav-link">English</a></li>
+                    <li class="nav-item"><a href="course_IT.html" class="nav-link">Lập Trình</a></li>
+                    <li class="nav-item"><a href="course_softSkills.html" class="nav-link">Kỹ Năng Mềm</a></li>
+                    <li class="nav-item"><a href="course_English.html" class="nav-link">Ngoại Ngữ</a></li>
+                    <li class="nav-item"><a href="course_GiaiTich.html" class="nav-link">Giải Tích</a></li>
+                    <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Đại Số</a></li>
+                    <li class="nav-item"><a href="course_DoHoa.html" class="nav-link">Đồ Họa</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
                   <a href="blog.html" class="nav-link">Blog</a>
                 </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Pages</a>
-                  <ul class="navbar-nav nav mx-auto">
-                    <li class="nav-item">
-                      <a href="#" class="nav-link dropdown_icon">Courses</a>
-                      <ul class="navbar-nav nav mx-auto">
-                        <li class="nav-item"><a href="course.html" class="nav-link">Courses</a></li>
-                        <li class="nav-item"><a href="course-details.html" class="nav-link">Courses Details</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a href="event.html">Events</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item"><a href="become-a-teacher.html" class="nav-link">Become A Teacher</a></li>
-                    <li class="nav-item"><a href="teacher-profile.html" class="nav-link">Teachers Profile</a></li>
-                    <li class="nav-item"><a href="team.html" class="nav-link">Teachers Page</a></li>
-                    <li class="nav-item"><a href="forgot-password.html" class="nav-link">Forgot Password</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
+                <li class="nav-item"><a href="sale.html" class="nav-link">Khuyến Mãi</a></li>
               </ul>
             </div>
             <div class="mr-auto search_area">
@@ -130,7 +111,7 @@
                   <div id="search">
                     <button type="button" class="close">×</button>
                     <form>
-                      <input type="search" value="" placeholder="Search here...." required />
+                      <input id="search_input" type="search" value="" placeholder="Search here...." required />
                     </form>
                   </div>
                 </li>
@@ -140,16 +121,15 @@
           <!-- END NAVBAR -->
         </div>
       </div>
-      <div class="header_inner blog_page">
+      <div class="header_inner blog_page" id="header_inner">
         <div class="intro_wrapper">
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-8 col-lg-8">
                 <div class="intro_text">
-                  <h1>Courese IT</h1>
+                  <h1>Lập Trình</h1>
                   <div class="pages_links">
-                    <a href="#" title="">Home</a>
-                    <a href="#" title="" class="active">Course IT Page</a>
+                    <a href="#" title="">Trang Chủ</a>
                   </div>
                 </div>
               </div>
@@ -256,7 +236,7 @@
     <!-- Alert Success -->
     <div class="alert alert-success fixed-top base-font" id="success-alert" style="height: 140px;display: none; ">
       <button type="button" class="close" data-dismiss="alert">x</button>
-      <strong style="font-size: xx-large;margin-left: 630px;">Success! </strong>
+      <strong style="font-size: xx-large;margin-left: 630px;">Đã Thêm Vào Giỏ Thành Công!  </strong>
     </div>
 
     <!--Start Courses Area Section-->
@@ -264,266 +244,7 @@
       <div class="container">
         <div id="button-add"></div>
         <div class="row" id="course_item">
-          <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_1.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">$150</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Make Better Decisions</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">Jhonthan Smith</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fas fa-user"></i>180 Days</li>
-                    <li><i class="fas fa-calendar-alt"></i>30 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-           
-          </div> -->
-          <!-- Ends: . -->
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_2.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">Free</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">How To Be A Speaker</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">Denise Wood</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 180 Days</li>
-                    <li><i class="fa fa-comment"></i>50 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_3.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">120$</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Network Introductions</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">Preston Marshall</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 140 Days</li>
-                    <li><i class="fa fa-comment"></i>60 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_4.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">250$</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Brand Management</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">John Porter</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 130 Days</li>
-                    <li><i class="fa fa-comment"></i>45 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_5.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">180$</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Moralities Of Everyday</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">Mittie Hill</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 190 Days</li>
-                    <li><i class="fa fa-comment"></i>40 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_6.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">130$</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Life Coach Training</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">Marian Dupre</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 150 Days</li>
-                    <li><i class="fa fa-comment"></i>30 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_3.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">250$</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Brand Management</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">John Porter</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 130 Days</li>
-                    <li><i class="fa fa-comment"></i>45 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_1.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">180$</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Moralities Of Everyday</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">Mittie Hill</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 190 Days</li>
-                    <li><i class="fa fa-comment"></i>40 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-            <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                <div class="courses_banner">
-                  <a href="#"><img src="images/courses/courses_2.jpg" alt="" class="img-fluid" /></a>
-                </div>
-                <div class="purchase_price">
-                  <a href="#" class="read_more-btn">130$</a>
-                </div>
-              </div>
-              <div class="courses_info_wrapper">
-                <div class="courses_title">
-                  <h3><a href="#">Life Coach Training</a></h3>
-                  <div class="teachers_name">Teacher - <a href="#" title="">Marian Dupre</a></div>
-                </div>
-                <div class="courses_info">
-                  <ul class="list-unstyled">
-                    <li><i class="fa fa-user"></i> 150 Days</li>
-                    <li><i class="fa fa-comment"></i>30 Students</li>
-                  </ul>
-                  <a href="#" class="cart_btn">Add to Cart</a>
-                </div>
-              </div>
-            </div>
-            <!-- Ends: .single courses -->
-          </div>
-          <!-- Ends: . -->
-          <!-- ---------------------Phân trang-------------------------->
-          <!-- <div class="pagination_blog">
-            <ul>
-              <li><a href="#">1</a></li>
-              <li class="current"><a href="#">2</a></li>
-              <li>
-                <a href="#" class=""><i class="flaticon-right-arrow"></i></a>
-              </li>
-            </ul>
-          </div> -->
+         
         </div>
         <div>
           <ul class="pagination home-product__pagination" id="pagination">
@@ -567,47 +288,71 @@
     <!-- ./ End Courses Area section -->
 
     <!-- Footer -->
-    <footer class="footer_2">
+    <footer>
       <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-3 col-md-3 col-lg-3 p-0">
+            <div class="shape_wrapper">
+              <img src="images/shapes/bubble_shpe_1.png" alt="" class="shape_t_1" />
+              <img src="images/shapes/round_shpae_1.png" alt="" class="shape_t_2" />
+            </div>
+          </div>
+          <div class="col-12 col-sm-9 col-md-9 col-lg-9 p-0 become_techer_wrapper">
+            <div class="become_a_teacher">
+              <div class="title">
+                <h2>Trở Thành Mentor của chúng tôi</h2>
+                <p>
+                  Tham gia đội ngũ mentor của chúng tôi để chia sẻ kiến thức và kinh nghiệm của bạn. Cùng chúng tôi định hướng và hỗ trợ thế hệ học viên tiếp
+                  theo trên con đường học tập và phát triển.
+                </p>
+              </div>
+              <!-- ends: .section-header -->
+              <div class="get_s_btn">
+                <a href="#" title="">Bắt đầu ngay</a>
+              </div>
+              <img src="images/shapes/bubble_shpe_2.png" alt="" class="shape_t_1" />
+            </div>
+          </div>
+        </div>
         <div class="footer_top">
           <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
               <div class="footer_single_col footer_intro">
                 <img src="images/logo2.png" alt="" class="f_logo" />
-                <p>Ante amet vitae vulputate odio nulla vel pretium pulvinar aenean. Rhoncus eget adipiscing etiam arcu. Ultricies justo ipsum nec amet.</p>
+                <p>Học hôm nay, dẫn đầu ngày mai!</p>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-2">
               <div class="footer_single_col">
-                <h3>Useful Links</h3>
+                <h3>Liên kết hữu ích</h3>
                 <ul class="location_info quick_inf0">
-                  <li><a href="#">Leadereship</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Diversity</a></li>
-                  <li><a href="#">Jobs</a></li>
-                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Về chúng tôi</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Nhà phát triển</a></li>
+                  <li><a href="#">Dịch vụ</a></li>
+                  <li><a href="#">Liên hệ</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-2">
               <div class="footer_single_col information">
-                <h3>information</h3>
+                <h3>Thông tin</h3>
                 <ul class="quick_inf0">
-                  <li><a href="#">Leadereship</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Diversity</a></li>
-                  <li><a href="#">Jobs</a></li>
-                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Tham quan khuôn viên trường</a></li>
+                  <li><a href="#">Cuộc sống sinh viên</a></li>
+                  <li><a href="#">Học bổng</a></li>
+                  <li><a href="#">Đầu vào</a></li>
+                  <li><a href="#">Khả năng lãnh đạo</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
               <div class="footer_single_col contact">
-                <h3>Contact Us</h3>
-                <p>Ante amet vitae vulputate odio nulla vel pretium aenean.</p>
+                <h3>Liên hệ chúng tôi</h3>
+                <p>Vui lòng liên hệ với chúng tôi qua Điện thoại hoặc gửi tin nhắn cho chúng tôi.</p>
                 <div class="contact_info">
                   <span>+000 124 325</span>
-                  <span class="email">info@yourdomain.com</span>
+                  <span class="email">eduwise@gmail.com</span>
                 </div>
                 <ul class="social_items d-flex list-unstyled">
                   <li>
@@ -625,18 +370,18 @@
                 </ul>
               </div>
             </div>
-            <div class="col-12 col-md-12 col-lg-12">
-              <div class="copyright">
-                <a target="_blank" href="https://www.templateshub.net">Templates Hub</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-      <div class="shapes_bg">
-        <img src="images/shapes/testimonial_2_shpe_1.png" alt="" class="shape_3" />
-        <img src="images/shapes/footer_2.png" alt="" class="shape_1" />
+      <div class="round_shape">
+        <span class="shape_1"></span>
+        <span class="shape_2"></span>
+        <span class="shape_3"></span>
+        <span class="shape_4"></span>
+        <span class="shape_5"></span>
+        <span class="shape_6"></span>
       </div>
+      <img src="images/shapes/footer_bg_shpe_1.png" alt="" class="shapes1_footer" />
     </footer>
     <!-- End Footer -->
 
@@ -662,9 +407,12 @@
             ><span
               ><label>*Kiểu Khóa Học:</label>
               <select style="background-color: white; width: 187px" id="courseType" placeholder="Chọn kiểu khóa học...">
-                <option>JAVA</option>
+                <option>LAPTRINH</option>
                 <option>SOFT_SKILL</option>
                 <option>ENGLIGH</option>
+                <option>GIAITICH</option>
+                <option>DAISO</option>
+                <option>DOHOA</option>
               </select></span
             ></span
           >
@@ -800,7 +548,7 @@
               <a href="team.html" data-toggle="tooltip" data-placement="top" title="Team Page"><img src="demo/team.png" alt="" class="img-fluid" /></a>
             </li>
             <li>
-              <a href="contact.html" data-toggle="tooltip" data-placement="top" title="Contact Page"><img src="demo/contact.png" alt="" class="img-fluid" /></a>
+              <a href="sale.html" data-toggle="tooltip" data-placement="top" title="Contact Page"><img src="demo/contact.png" alt="" class="img-fluid" /></a>
             </li>
           </ul>
         </div>

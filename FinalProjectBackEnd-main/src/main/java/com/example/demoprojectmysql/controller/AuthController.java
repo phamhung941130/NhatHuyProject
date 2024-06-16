@@ -31,8 +31,6 @@ public class AuthController {
     @Autowired
     private AccountRepository accountRepository;
     @Autowired
-    private OrderRepository orderRepository;
-    @Autowired
     private JWTTokenUtils jwtTokenUtils;
     @Autowired
     private MailSenderService mailSenderService;
@@ -68,7 +66,6 @@ public class AuthController {
     public AccountLoginResponse loginJWT(@RequestParam String username,@RequestParam String password){
         // Bước1: Kiểm tra username
         Optional<Account> accountOptional = accountRepository.findByUsername(username);
-        int count = orderRepository.countByAccount_Username(username);
         if (accountOptional.isEmpty()){
             throw new CustomException(ErrorResponseEnum.LOGIN_USERNAME_NOT_EXISTED);
         }
@@ -82,7 +79,6 @@ public class AuthController {
         }
         AccountLoginResponse response = new AccountLoginResponse();
         BeanUtils.copyProperties(account, response);
-        response.setQuantity_Order(count);
 
         // Bước3: Tạo ra token
         String token = jwtTokenUtils.createAccessToken(response);
