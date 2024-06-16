@@ -14,7 +14,15 @@ function SearchOrderRequest(orderBy, statusOrder, pageSize, pageNumber, sortBy, 
 $(function () {
   // $("#pagination").load("/assets/html/pagination.html");
 
-  orderPageAll();
+  // Check if we need to navigate to a specific page state
+  const pageState = localStorage.getItem("orderPageState");
+  if (pageState === "order-pending") {
+    orderPagePending();
+    // Clear the state from local storage to prevent repeat navigation
+    localStorage.removeItem("orderPageState");
+  } else {
+    orderPageAll();
+  }
 });
 
 function orderPageAll() {
@@ -26,17 +34,22 @@ function orderPageAll() {
 
 function orderPagePending() {
   changActivePage("order-pending");
+  $(".status-order").empty();
+  $(".status-order").append("<div>Trạng thái: Đang chờ</div>");
   getListOrder("PENDING");
-  $(".status-order").load("/assets/html/button-order.html");
 }
 
 function orderPageDone() {
   changActivePage("order-done");
+  $(".status-order").empty();
+  $(".status-order").append("<div>Trạng thái: Hoàn thành</div>");
   getListOrder("DONE");
 }
 
 function orderPageCancel() {
   changActivePage("order-cancel");
+  $(".status-order").empty();
+  $(".status-order").append("<div>Trạng thái: Đã hủy</div>");
   getListOrder("CANCEL");
 }
 
@@ -75,12 +88,18 @@ function getListOrder(status) {
   });
 }
 
+function formatVND(amount) {
+  return amount.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+}
+
 function fillOrderToTable(orderList, status) {
   $("#order-item").empty();
   console.log(orderList);
   for (var index = 0; index < orderList.length; index++) {
     let order = orderList[index];
     let statusOrder;
+    const priceNumber = Number(order.course.price);
+    let price_VN = formatVND(priceNumber);
     if (order.orderStatus == "PENDING") {
       statusOrder = "Chờ thanh toán";
     } else if (order.orderStatus == "DONE") {
@@ -91,81 +110,76 @@ function fillOrderToTable(orderList, status) {
     let textStatus =
       order.orderStatus === "PENDING" && status === "PENDING"
         ? `<div class="row">
-                        <div class="col-6">
-                            <button type="button" class="btn base-font base-shoppe-bg" style=" width: 80%;" 
-                            onclick="openModalPay()">Mua</button>
-                        </div>
-
-                        <div class="col-6">
-                            <button type="button" class="btn base-font text-white bg-secondary " style=" width: 80%;" 
-                            onclick="cancelOrder(` +
-          order.id +
-          `)">Huỷ</button>
-                        </div>
-                    </div>`
+                    <div class="col-6">
+                        <button type="button" class="btn base-font base-shoppe-bg" style=" width: 80%;" 
+                        onclick="openPaypage(${order.course.price}, ${order.id})">Mua</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn base-font text-white bg-secondary" style=" width: 80%;" 
+                        onclick="cancelOrder(${order.id})">Huỷ</button>
+                    </div>
+                </div>`
         : "Trạng thái: " + statusOrder;
 
     $("#order-item").append(
       `<div class="row border-bottom mb-3 bg-white">
-            <div class="col-3 center-block text-center">
-                <img src="` +
-        order.course.image +
-        `" 
-                class="img-fluid img-thumbnail img-order " alt="Sheep">
-            </div>
-            <div class="col-5 d-flex justify-conten-start align-items-center">
-                <div class="">
-                    <h4 class="p-2"><b>` +
-        order.course.courseName +
-        `</b></h4>
-                    <div class="p-2">Giá khóa học: ` +
-        order.course.price +
-        ` đ</div>
-                    <div class="p-2">Ngày order: ` +
-        order.createDate +
-        `</div>
-                </div>
-            </div>
-            <div class="col-4 d-flex justify-conten-start align-items-center">
-                <div class="">
-                    <h4 class="color-shoppe p-2"><b>Giá: ` +
-        order.course.price +
-        ` đ</b></h4>
-                    <div class="p-2 status-order">` +
-        textStatus +
-        `</div>
-                </div>
-            </div>
-        </div>`
+              <div class="col-3 center-block text-center">
+                  <img src="${order.course.image}" 
+                  class="img-fluid img-thumbnail img-order" alt="Sheep">
+              </div>
+              <div class="col-5 d-flex justify-content-start align-items-center">
+                  <div>
+                      <h4 class="p-2"><b>${order.course.courseName}</b></h4>
+                      <div class="p-2">Giá khóa học: ${price_VN}</div>
+                      <div class="p-2">Ngày order: ${order.createDate}</div>
+                  </div>
+              </div>
+              <div class="col-4 d-flex justify-content-start align-items-center">
+                  <div>
+                      <h4 class="color-shoppe p-2"><b>Giá: ${price_VN}</b></h4>
+                      <div class="p-2 status-order">${textStatus}</div>
+                  </div>
+              </div>
+          </div>`
     );
   }
 }
 
-function paymentOder(orderId) {
-  //   ------------------------------------- API THANH TOÁN ORDER -------------------------------------
-  $.ajax({
-    url: baseUrlOrder + "/buy/" + orderId,
-    type: "POST",
-    beforeSend: function (xhr) {
-      xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"));
-    },
-    contentType: "application/json",
-    error: function (err) {
-      console.log(err);
-      confirm(err.responseJSON.message);
-    },
-    success: function (data) {
-      orderPagePending();
-      alert("Đã thanh toán thành công!");
-    },
-  });
+function openPaypage(price, orderId) {
+  let text = "Bạn có chắc muốn mua khóa học?";
+  if (confirm(text) == true) {
+    window.location.href = `./pay_page.html?price=${price}&orderId=${orderId}`;
+  }
 }
 
 function cancelOrder(orderId) {
-  //   ------------------------------------- API HUỶ ĐƠN HÀNG -------------------------------------
+  let text = "Bạn có chắc hủy mua khóa học?.";
+  if (confirm(text) == true) {
+    //   ------------------------------------- API HUỶ ĐƠN HÀNG -------------------------------------
+    $.ajax({
+      url: baseUrlOrder + "/cancel/" + orderId,
+      type: "POST",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"));
+      },
+      contentType: "application/json",
+      error: function (err) {
+        console.log(err);
+        confirm(err.responseJSON.message);
+      },
+      success: function (data) {
+        orderPagePending();
+        alert("Đã huỷ!");
+        upQuantity();
+      },
+    });
+  }
+}
+
+function upQuantity() {
   $.ajax({
-    url: baseUrlOrder + "/cancel/" + orderId,
-    type: "POST",
+    url: `http://localhost:7777/api/v1/order/get-count?username=${localStorage.getItem("username")}&status=PENDING`,
+    type: "GET",
     beforeSend: function (xhr) {
       xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"));
     },
@@ -175,12 +189,7 @@ function cancelOrder(orderId) {
       confirm(err.responseJSON.message);
     },
     success: function (data) {
-      orderPagePending();
-      alert("Đã huỷ!");
+      document.getElementById("upQuantity").innerHTML = data;
     },
   });
-}
-
-function openModalPay() {
-  $("#modalPay").modal("show");
 }

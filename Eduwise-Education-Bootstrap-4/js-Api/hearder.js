@@ -64,7 +64,7 @@ function showAlrtSuccess() {
 
 function upQuantity() {
   $.ajax({
-    url: "http://localhost:7777/api/v1/order" + "/get-count?username=" + localStorage.getItem("username"),
+    url: `http://localhost:7777/api/v1/order/get-count?username=${localStorage.getItem("username")}&status=PENDING`,
     type: "GET",
     beforeSend: function (xhr) {
       xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"));

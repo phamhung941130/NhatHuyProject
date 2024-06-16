@@ -10,6 +10,6 @@ import java.util.Optional;
 
 public interface OrderRepository extends JpaRepository<Order, Integer> {
     List<Order> findAllByAccount_IdAndOrderStatus(int accountID,OrderStatus orderStatus);
-    int countByAccount_Username(String username);
+    int countByAccount_UsernameAndOrderStatus(String username,OrderStatus orderStatus);
     List<Order> findByAccount_Id(int accountID);
 }

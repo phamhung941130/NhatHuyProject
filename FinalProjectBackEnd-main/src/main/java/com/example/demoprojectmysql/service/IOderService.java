@@ -13,6 +13,6 @@ public interface IOderService {
     Order buyCourse (int orderId);
     Order cancelOrder (int orderId);
     List<Order> getByAccountID(int accountID);
-    int countByAccount_Username(String username);
+    int countByAccount_UsernameAndStatus(String username,OrderStatus status);
 
 }

@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "ACCOUNT2")
+@Table(name = "ACCOUNT")
 @Getter // Sinh ra các method getter
 @Setter// Sinh ra các method setter
 @NoArgsConstructor // Sinh ra hàm khởi tạo không tham số

@@ -84,8 +84,8 @@ public class OrderService implements IOderService {
     }
 
     @Override
-    public int countByAccount_Username(String username) {
-        return orderRepository.countByAccount_Username(username);
+    public int countByAccount_UsernameAndStatus(String username,OrderStatus status) {
+        return orderRepository.countByAccount_UsernameAndOrderStatus(username,status);
     }
 
 }
