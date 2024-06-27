@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/assets/bootstrap.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awsome CSS -->
     <link rel="stylesheet" href="css/assets/font-awesome.min.css" />
     <link rel="stylesheet" href="css/assets/flaticon.css" />
@@ -37,6 +38,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/sales.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -57,8 +59,8 @@
               <div class="info_wrapper">
                 <div class="contact_info">
                   <ul class="list-unstyled">
-                    <li><i class="flaticon-phone-receiver"></i>+000-2356-222</li>
-                    <li><i class="flaticon-mail-black-envelope-symbol"></i>eduwise@gmail.com</li>
+                    <li><i class="flaticon-phone-receiver"></i>010 111 777</li>
+                    <li><i class="flaticon-mail-black-envelope-symbol"></i>nhathuy@gmail.com</li>
                   </ul>
                 </div>
                 <div class="login_info" id="login_info">
@@ -68,7 +70,7 @@
                         <a href="#" class="nav-link sign-in js-modal-show"><i class="flaticon-user-male-black-shape-with-plus-sign"></i>Sign Up</a>
                       </li>
                       <li class="nav-item">
-                        <a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Lon In</a>
+                        <a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Log In</a>
                       </li>
                     </ul>
                   </div>
@@ -101,7 +103,7 @@
                     <li class="nav-item"><a href="course_English.html" class="nav-link">Ngoại Ngữ</a></li>
                     <li class="nav-item"><a href="course_GiaiTich.html" class="nav-link">Giải Tích</a></li>
                     <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Đại Số</a></li>
-                    <li class="nav-item"><a href="course_DoHoa.html" class="nav-link">Đồ Họa</a></li>
+                
                   </ul>
                 </li>
                 <li class="nav-item">
@@ -266,7 +268,28 @@
                   border-radius: 3px;
                 "
               >
-                Bắt đầu ngay
+              <button id="registerButton">Đăng kí ngay</button>
+              <!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  document.getElementById('registerButton').addEventListener('click', function() {
+    alert('Hãy đăng nhập để bắt đầu');
+  });
+</script>
+<style>
+  .tp-caption.rev-btn.left_btn button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    outline: inherit;
+  }
+</style>
               </div>
               <!-- LAYER NR. 5 -->
               <div
@@ -590,23 +613,28 @@
       </section>
       <!-- End Login Signup Option -->
 
+      
       <section class="cources_highlight">
         <div class="container">
           <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
               <div class="latest_blog_carousel">
                 <div class="single_item single_item_first">
+
+
                   <div class="blog-img">
                     <a href="#"><img src="images/features/nguyen-quoc-cuong.jpg" alt="" class="img-fluid" /></a>
                   </div>
                   <div class="blog_title">
-                    <span>Giảng Viên Lập Trình</span>
-                    <h3><a href="#" title="">Nguyễn Quốc Cường</a></h3>
+                    <span>Mentor Tiếng Anh</span>
+                    <h3><a href="#" title="">Nguyễn Hải Long</a></h3>
                     <p>
                       Đã có hơn 5 năm kinh nghiệm giảng dạy công nghệ thông tin tại các trường đại học và trung tâm đào tạo, tập trung vào các môn lập trình, cơ
                       sở dữ liệu và phát triển phần mềm.
                     </p>
                   </div>
+
+                  
                 </div>
 
                 <div class="single_item single_item_center">
@@ -614,11 +642,11 @@
                     <a href="#" title=""><img src="images/features/Jennica.jpg" alt="" class="img-fluid" /></a>
                   </div>
                   <div class="blog_title">
-                    <span>Giảng Viên Tiếng Anh</span>
-                    <h3><a href="#" title="">Jennica</a></h3>
+                    <span>Mentor Lập trình</span>
+                    <h3><a href="#" title="">Nguyễn Nhật Huy</a></h3>
                     <p>
-                      Đã có 7 năm kinh nghiệm giảng dạy tiếng Anh cho học sinh ở các cấp độ khác nhau, từ cơ bản đến nâng cao. Luôn chú trọng phát triển kỹ năng
-                      nghe, nói, đọc, viết cho học viên thông qua các phương pháp giảng dạy sáng tạo và tương tác.
+                      Đã có 5 năm kinh nghiệm giảng dạy kỹ năng mềm, bao gồm kỹ năng giao tiếp, làm việc nhóm, và quản lý thời gian. Sử dụng phương pháp học tập
+                      qua thực hành và các hoạt động nhóm để giúp học viên phát triển và áp dụng hiệu quả các kỹ năng trong công việc và cuộc sống.
                     </p>
                   </div>
                 </div>
@@ -628,11 +656,12 @@
                     <a href="#" title=""><img src="images/features/Nguyen_Huu_Khoa.jpg" alt="" class="img-fluid" /></a>
                   </div>
                   <div class="blog_title">
-                    <span>Giảng viên kỹ năng mềm</span>
-                    <h3><a href="#" title="">Nguyễn Hữu Khoa</a></h3>
+                    <span>Giảng viên Toán đại cương</span>
+                    <h3><a href="#" title="">Nguyễn Thái Hải</a></h3>
                     <p>
-                      Đã có 5 năm kinh nghiệm giảng dạy kỹ năng mềm, bao gồm kỹ năng giao tiếp, làm việc nhóm, và quản lý thời gian. Sử dụng phương pháp học tập
-                      qua thực hành và các hoạt động nhóm để giúp học viên phát triển và áp dụng hiệu quả các kỹ năng trong công việc và cuộc sống.
+                      Đã có 4 năm kinh nghiệm giảng dạy tiếng Anh cho học sinh ở các cấp độ khác nhau, từ cơ bản đến nâng cao. Luôn chú trọng phát triển kỹ năng
+                      nghe, nói, đọc, viết cho học viên thông qua các phương pháp giảng dạy sáng tạo và tương tác.
+                      
                     </p>
                   </div>
                 </div>
@@ -642,125 +671,96 @@
         </div>
       </section>
       <!-- End Popular Courses Highlight -->
+      <!-- End Popular Courses Highlight -->
 
-      <section class="popular_courses">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="sub_title">
-                <h2>Các khóa học phổ biến</h2>
-                <p>
-                  Đừng để những giây phút chán nản làm ta chùn bước. Mỗi một bước đi là từng bước tiếp thu những tri thức của nhân loại tích lũy thành của riêng
-                  bản thân mình.
-                </p>
-              </div>
-              <!-- ends: .section-header -->
-            </div>
 
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-              <div class="single-courses">
-                <div class="courses_banner_wrapper">
-                  <div class="courses_banner">
-                    <a href="/course_IT.html"><img src="images/courses/lập trình.jfif" alt="" class="img-fluid" /></a>
-                  </div>
+      <div id="wp-products">
+        <h2>SẢN PHẨM CỦA CHÚNG TÔI</h2>
+        <ul id="list-products">
+            <div class="item">
+                <img src="images/sales/khóa hoc.jpg" alt="">
+                <div class="stars">
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
                 </div>
-                <div class="courses_info_wrapper">
-                  <div class="courses_title" style="text-align: center">
-                    <h3><a href="/course_IT.html">Các Khóa Học Lập Trình</a></h3>
-                  </div>
+  
+                <div class="name">B-LEARNING</div>
+                <div class="desc">30+ khóa học 
+                <br>500+ video <br>3000+ học viên
                 </div>
-              </div>
-              <!-- Ends: .single courses -->
             </div>
-            <!-- Ends: . -->
+  
+  
+            <div class="item">
+                <img src="images/sales/tailieu (1).jpg" alt="">
+                <div class="stars">
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                </div>
+  
+                <div class="name">TÀI LIỆU ĐA DẠNG</div>
+                <div class="desc">100+ môn học 
+                    <br>500+ đề thi <br>10000+ lượt tải</div>
+            
+            </div>
+  
+  
+            <div class="item">
+                <img src="images/sales/code.jpg" alt="">
+                <div class="stars">
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                    <span>
+                        <img src="images/sales/star.png" alt="">
+                    </span>
+                </div>
+  
+                <div class="name">ĐẶC BIỆT</div>
+                <div class="desc">Các khóa học lập trình <br> Java, Php, Python, ... <br>JavaScript, VueJS, React,...</div>
+        
+            </div>
+    
+        </ul>
+      
+    </div>
 
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-              <div class="single-courses">
-                <div class="courses_banner_wrapper">
-                  <div class="courses_banner">
-                    <a href="/course_softSkills.html"><img src="images/courses/kỹ năng mềm.jfif" alt="" class="img-fluid" /></a>
-                  </div>
-                </div>
-                <div class="courses_info_wrapper">
-                  <div class="courses_title" style="text-align: center">
-                    <h3><a href="/course_softSkills.html">Các Khóa Học Kỹ Năng Mềm</a></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Ends: .single courses -->
-            </div>
-            <!-- Ends: . -->
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-              <div class="single-courses">
-                <div class="courses_banner_wrapper">
-                  <div class="courses_banner">
-                    <a href="/course_English.html"><img src="images/courses/tiếng anh.jfif" alt="" class="img-fluid" /></a>
-                  </div>
-                </div>
-                <div class="courses_info_wrapper">
-                  <div class="courses_title">
-                    <h3><a href="/course_English.html">Các Khóa Học Ngoại Ngữ</a></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Ends: .single courses -->
-            </div>
-            <!-- Ends: . -->
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-              <div class="single-courses">
-                <div class="courses_banner_wrapper">
-                  <div class="courses_banner">
-                    <a href="/course_GiaiTich.html"><img src="images/courses/giải tích.png" alt="" class="img-fluid" /></a>
-                  </div>
-                </div>
-                <div class="courses_info_wrapper">
-                  <div class="courses_title">
-                    <h3><a href="/course_GiaiTich.html">Các Khóa Học Giải Tích</a></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Ends: .single courses -->
-            </div>
-            <!-- Ends: . -->
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-              <div class="single-courses">
-                <div class="courses_banner_wrapper">
-                  <div class="courses_banner">
-                    <a href="course_DaiSo.html"><img src="images/courses/đại số.jfif" alt="" class="img-fluid" /></a>
-                  </div>
-                </div>
-                <div class="courses_info_wrapper">
-                  <div class="courses_title">
-                    <h3><a href="course_DaiSo.html">Các Khóa Học Đại Số </a></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Ends: .single courses -->
-            </div>
-            <!-- Ends: . -->
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-              <div class="single-courses">
-                <div class="courses_banner_wrapper">
-                  <div class="courses_banner">
-                    <a href="course_DoHoa.html"><img src="images/courses/đồ họa.jfif" alt="" class="img-fluid" /></a>
-                  </div>
-                </div>
-                <div class="courses_info_wrapper">
-                  <div class="courses_title">
-                    <h3><a href="course_DoHoa.html">Các Khóa Học Đồ Họa</a></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Ends: .single courses -->
-            </div>
-            <!-- Ends: . -->
-          </div>
-        </div>
-      </section>
+    
       <!-- ./ End Courses Area section -->
 
       <section class="about_top_wrapper">
@@ -814,7 +814,7 @@
               <div class="event_title_wrapper">
                 <div class="sub_title">
                   <h2>Sự kiện sắp tới</h2>
-                  <p>Tháng tới, Eduwais sẽ tổ chức rất nhiều sự kiện học tập để tất cả các bạn cùng tham gia.</p>
+                  <p>Tháng tới,Eduwise sẽ tổ chức rất nhiều sự kiện học tập để tất cả các bạn cùng tham gia.</p>
                 </div>
                 <!-- ends: .section-header -->
                 <div class="envent_all_view">
@@ -833,20 +833,20 @@
                 <div class="event_info">
                   <h3>
                     <a href="#" title=""
-                      >Đào tạo cơ bản về OneNote cho<br />
-                      Windows 10</a
+                      >Đào tạo cơ bản về Kỹ năng thuyết trình<br />
+                      </a
                     >
                   </h3>
                   <div class="events_time">
-                    <span class="time"><i class="flaticon-clock-circular-outline"></i>8:00 Sáng - 5:00 Chiều</span>
-                    <span><i class="fas fa-map-marker-alt"></i>Tòa Nhà TeamBiuding, Thanh Xuân, Hà Nội</span>
+                    <span class="time"><i class="flaticon-clock-circular-outline"></i>8:00 Sáng - 11:00 Sáng</span>
+                    <span><i class="fas fa-map-marker-alt"></i>Tòa Nhà TeamBuilding, Thanh Xuân, Hà Nội</span>
                   </div>
                   <p>
-                    Chương trình đào tạo cơ bản về OneNote cho Windows 10 của chúng tôi sẽ hướng dẫn bạn cách tạo, sắp xếp và chia sẻ ghi chú một cách hiệu quả.
+                    Chương trình đào tạo cơ bản về thuyết trình cho sinh viên HUST của chúng tôi sẽ giới thiệu cho các bạn làm thế nào để tự tin khi nói trước đám đông .
                   </p>
                   <div class="event_dete">
                     <span class="date">09</span>
-                    <span>Jan</span>
+                    <span>July</span>
                   </div>
                 </div>
               </div>
@@ -988,7 +988,7 @@
                   <h3>
                     <a href="#" title="">Cách trở thành bậc thầy về <br />CSS trong 3 tuần.</a>
                   </h3>
-                  <div class="post_bloger"><span>15/02/2018 - By </span> <span class="bloger_name"> Phạm Huy</span></div>
+                  <div class="post_bloger"><span>07/07/2024 - By </span> <span class="bloger_name"> Nhật Huy</span></div>
                 </div>
               </div>
             </div>
@@ -1005,7 +1005,7 @@
                       để giải quyết một vấn đề.</a
                     >
                   </h3>
-                  <div class="post_bloger"><span>15/02/2018 - By </span> <span class="bloger_name"> Nguyễn Nam</span></div>
+                  <div class="post_bloger"><span>15/02/2024 - By </span> <span class="bloger_name"> Nguyễn Nam</span></div>
                 </div>
               </div>
             </div>
@@ -1019,7 +1019,7 @@
                   <h3>
                     <a href="#" title="">Làm sao để giỏi tiếng Anh <br />Trong vòng 3 tháng</a>
                   </h3>
-                  <div class="post_bloger"><span>15/02/2018 - By </span> <span class="bloger_name"> Nhật Lê</span></div>
+                  <div class="post_bloger"><span>15/02/2024 - By </span> <span class="bloger_name"> Hải Long</span></div>
                 </div>
               </div>
             </div>
@@ -1028,38 +1028,7 @@
       </section>
       <!-- End Blog  -->
 
-      <section class="our_sponsor">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="sub_title">
-                <h2>Trang Tham Khảo Đáng Tin Cậy</h2>
-                <p>
-                  Trang tham khảo của chúng tôi cung cấp thông tin chính xác và cập nhật từ các nguồn uy tín. Đảm bảo bạn luôn tiếp cận được những tài liệu học
-                  thuật chất lượng và đáng tin cậy.
-                </p>
-              </div>
-              <!-- ends: .section-header -->
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-              <ul class="sponsored_company_logos">
-                <li><img src="images/logos/logo-1.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".1s" /></li>
-                <li><img src="images/logos/logo-2.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".2s" /></li>
-                <li><img src="images/logos/logo-3.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".3s" /></li>
-                <li><img src="images/logos/logo-4.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".6s" /></li>
-                <li><img src="images/logos/logo-5.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s" /></li>
-              </ul>
-              <ul class="sponsored_company_logos sponsored_company_logos_2">
-                <li><img src="images/logos/logo-6.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s" /></li>
-                <li><img src="images/logos/logo-7.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".3s" /></li>
-                <li><img src="images/logos/logo-8.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".6s" /></li>
-                <li><img src="images/logos/logo-9.png" alt="" class="img-fluid wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s" /></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ./ End Our Sponsor -->
+      
     </div>
 
     <footer>
@@ -1082,7 +1051,7 @@
               </div>
               <!-- ends: .section-header -->
               <div class="get_s_btn">
-                <a href="#" title="">Bắt đầu ngay</a>
+                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=n7jxBugHT0a0COwbRXA_McxTJvnd-4NEq_RG4A0uxpxUMFJSWkg3RkJHSko2UTZUNjg0VVJXTDhHQS4u" title="">Bắt đầu ngay</a>
               </div>
               <img src="images/shapes/bubble_shpe_2.png" alt="" class="shape_t_1" />
             </div>
@@ -1101,7 +1070,7 @@
                 <h3>Liên kết hữu ích</h3>
                 <ul class="location_info quick_inf0">
                   <li><a href="#">Về chúng tôi</a></li>
-                  <li><a href="#">Blog</a></li>
+                  <li><a href="blog.html">Blog</a></li>
                   <li><a href="#">Nhà phát triển</a></li>
                   <li><a href="#">Dịch vụ</a></li>
                   <li><a href="#">Liên hệ</a></li>
@@ -1112,11 +1081,10 @@
               <div class="footer_single_col information">
                 <h3>Thông tin</h3>
                 <ul class="quick_inf0">
-                  <li><a href="#">Tham quan khuôn viên trường</a></li>
+                  <li><a href="https://www.hust.edu.vn/">Thông tin về trường</a></li>
                   <li><a href="#">Cuộc sống sinh viên</a></li>
                   <li><a href="#">Học bổng</a></li>
-                  <li><a href="#">Đầu vào</a></li>
-                  <li><a href="#">Khả năng lãnh đạo</a></li>
+                  <li><a href="#">Thi đánh giá năng lực</a></li>
                 </ul>
               </div>
             </div>
@@ -1125,8 +1093,8 @@
                 <h3>Liên hệ chúng tôi</h3>
                 <p>Vui lòng liên hệ với chúng tôi qua Điện thoại hoặc gửi tin nhắn cho chúng tôi.</p>
                 <div class="contact_info">
-                  <span>+000 124 325</span>
-                  <span class="email">eduwise@gmail.com</span>
+                  <span>010 111 777</span>
+                  <span class="email">nhathuy@gmail.com</span>
                 </div>
                 <ul class="social_items d-flex list-unstyled">
                   <li>
@@ -1196,5 +1164,7 @@
     <script src="js-Api/load.js"></script>
     <script src="js-Api/hearder.js"></script>
     <script src="js-Api/login.js"></script>
+
+    
   </body>
 </html>

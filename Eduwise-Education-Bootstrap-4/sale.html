@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/assets/bootstrap.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awsome CSS -->
     <link rel="stylesheet" href="css/assets/font-awesome.min.css" />
     <link rel="stylesheet" href="css/assets/flaticon.css" />
@@ -31,6 +32,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/sales.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -51,8 +53,8 @@
               <div class="info_wrapper">
                 <div class="contact_info">
                   <ul class="list-unstyled">
-                    <li><i class="flaticon-phone-receiver"></i>+000-2356-222</li>
-                    <li><i class="flaticon-mail-black-envelope-symbol"></i>contact@yourdomain.com</li>
+                    <li><i class="flaticon-phone-receiver"></i>010 111 777</li>
+                    <li><i class="flaticon-mail-black-envelope-symbol"></i>nhathuy@gmail.com</li>
                   </ul>
                 </div>
                 <div class="login_info" id="login_info">
@@ -62,12 +64,13 @@
                         <a href="#" class="nav-link sign-in js-modal-show"><i class="flaticon-user-male-black-shape-with-plus-sign"></i>Sign Up</a>
                       </li>
                       <li class="nav-item">
-                        <a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Lon In</a>
+                        <a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Log In</a>
                       </li>
                     </ul>
                   </div>
 
                   <a href="#" title="" class="apply_btn">Apply Now</a>
+
                   <div class="header__navbar-user" id="login_ok"></div>
                   <div id="user_cart"></div>
                 </div>
@@ -87,34 +90,21 @@
                   <a href="index.html" class="nav-link active">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">Khóa Học</a>
+                  <a href="#" class="nav-link active">Khóa Học</a>
                   <ul class="navbar-nav nav mx-auto">
                     <li class="nav-item"><a href="course_IT.html" class="nav-link">Lập Trình</a></li>
                     <li class="nav-item"><a href="course_softSkills.html" class="nav-link">Kỹ Năng Mềm</a></li>
                     <li class="nav-item"><a href="course_English.html" class="nav-link">Ngoại Ngữ</a></li>
                     <li class="nav-item"><a href="course_GiaiTich.html" class="nav-link">Giải Tích</a></li>
                     <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Đại Số</a></li>
-                    <li class="nav-item"><a href="course_DoHoa.html" class="nav-link">Đồ Họa</a></li>
+                
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a href="blog.html" class="nav-link">Blog</a>
+                  <a href="blog.html" class="nav-link active">Blog</a>
                 </li>
-
-                <li class="nav-item"><a href="sale.html" class="nav-link">Khuyến Mãi</a></li>
-              </ul>
-            </div>
-            <div class="mr-auto search_area">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <i class="search_btn flaticon-magnifier"></i>
-                  <div id="search">
-                    <button type="button" class="close">×</button>
-                    <form>
-                      <input id="search_input" type="search" value="" placeholder="Search here...." required />
-                    </form>
-                  </div>
-                </li>
+                <li class="nav-item"><a href="taiLieu.html" class="nav-link active">Tài Liệu</a></li>
+                <li class="nav-item"><a href="sale.html" class="nav-link active">Khuyến Mãi</a></li>
               </ul>
             </div>
           </nav>
@@ -129,7 +119,8 @@
                 <div class="intro_text">
                   <h1>Khuyến Mại</h1>
                   <div class="pages_links">
-                    <a href="#" title="">Trang Chủ</a>
+                    <a href="index.html" title="">Trang Chủ</a>
+                    <a href="#" title="" class="active">Khuyến mại</a>
                   </div>
                 </div>
               </div>
@@ -233,11 +224,160 @@
     </section>
     <!-- End Login Signup Option -->
 
-    <!-- Alert Success -->
-    <div class="alert alert-success fixed-top base-font" id="success-alert" style="height: 140px;display: none; ">
-      <button type="button" class="close" data-dismiss="alert">x</button>
-      <strong style="font-size: xx-large;margin-left: 630px;">Đã Thêm Vào Giỏ Thành Công!  </strong>
+  </div>
+  <div id="banner">
+      <div class="box-left">
+          <h2>
+              <span>KHÓA HỌC JAVA <br>Giảm 25% cho thành viên mới </span>
+          </h2>
+          <p>Khóa học giá rẻ tốt nhất cho sinh viên</p>
+          <button id="registerButton">Đăng kí ngay</button>
+      </div>
+      <div class="to-bottom">
+          <a href="">
+              <img src="images/sales/to_bottom.png" alt="">
+          </a>
+      </div>
+  </div>
+  <!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  document.getElementById('registerButton').addEventListener('click', function() {
+    alert('Hãy đăng nhập để bắt đầu');
+  });
+</script>
+  <section class="popular_courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="sub_title">
+            <h2>Các khóa học đang được giảm giá</h2>
+            <p>
+              Đừng để những giây phút chán nản làm ta chùn bước. Mỗi một bước đi là từng bước tiếp thu những tri thức của nhân loại tích lũy thành của riêng
+              bản thân mình.
+            </p>
+          </div>
+          <!-- ends: .section-header -->
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="single-courses">
+            <div class="courses_banner_wrapper">
+              <div class="courses_banner">
+                <a href="/course_IT.html"><img src="images/courses/lập trình.jfif" alt="" class="img-fluid" /></a>
+              </div>
+            </div>
+            <div class="courses_info_wrapper">
+              <div class="courses_title" style="text-align: center">
+                <h3><a href="/course_IT.html">Khóa Học Lập Trình Java</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- Ends: .single courses -->
+        </div>
+        <!-- Ends: . -->
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="single-courses">
+            <div class="courses_banner_wrapper">
+              <div class="courses_banner">
+                <a href="/course_softSkills.html"><img src="images/courses/kỹ năng mềm.jfif" alt="" class="img-fluid" /></a>
+              </div>
+            </div>
+            <div class="courses_info_wrapper">
+              <div class="courses_title" style="text-align: center">
+                <h3><a href="/course_softSkills.html">Các Khóa Học Kỹ Năng Mềm</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- Ends: .single courses -->
+        </div>
+        <!-- Ends: . -->
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="single-courses">
+            <div class="courses_banner_wrapper">
+              <div class="courses_banner">
+                <a href="/course_English.html"><img src="images/courses/tiếng anh.jfif" alt="" class="img-fluid" /></a>
+              </div>
+            </div>
+            <div class="courses_info_wrapper">
+              <div class="courses_title">
+                <h3><a href="/course_English.html">Khóa học Toeic</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- Ends: .single courses -->
+        </div>
+        <!-- Ends: . -->
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="single-courses">
+            <div class="courses_banner_wrapper">
+              <div class="courses_banner">
+                <a href="/course_GiaiTich.html"><img src="images/courses/giải tích.png" alt="" class="img-fluid" /></a>
+              </div>
+            </div>
+            <div class="courses_info_wrapper">
+              <div class="courses_title">
+                <h3><a href="/course_GiaiTich.html">Khóa Học Giải Tích III</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- Ends: .single courses -->
+        </div>
+        <!-- Ends: . -->
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="single-courses">
+            <div class="courses_banner_wrapper">
+              <div class="courses_banner">
+                <a href="course_DaiSo.html"><img src="images/courses/đại số.jfif" alt="" class="img-fluid" /></a>
+              </div>
+            </div>
+            <div class="courses_info_wrapper">
+              <div class="courses_title">
+                <h3><a href="course_DaiSo.html">Khóa Học Đại Số </a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- Ends: .single courses -->
+        </div>
+        <!-- Ends: . -->
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="single-courses">
+            <div class="courses_banner_wrapper">
+              <div class="courses_banner">
+                <a href="course_DoHoa.html"><img src="images/courses/đồ họa.jfif" alt="" class="img-fluid" /></a>
+              </div>
+            </div>
+            <div class="courses_info_wrapper">
+              <div class="courses_title">
+                <h3><a href="course_DoHoa.html">Khóa Học Đồ Họa</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- Ends: .single courses -->
+        </div>
+        <!-- Ends: . -->
+      </div>
     </div>
+  </section>
+
+  <div id="saleoff">
+      <div class="box-left">
+          <h1>
+              <span>GIẢM GIÁ LÊN ĐẾN</span>
+              <span>50%</span>
+          </h1>
+      </div>
+      <div class="box-right"></div>
+  </div>
+
 
     <!--Start Courses Area Section-->
     <section class="popular_courses" id="popular_courses_page">
@@ -261,19 +401,10 @@
               <a href="" class="pagination-item__link">2</a>
             </li>
             <li class="pagination-item">
-              <a href="" class="pagination-item__link">3</a>
-            </li>
-            <li class="pagination-item">
-              <a href="" class="pagination-item__link">4</a>
-            </li>
-            <li class="pagination-item">
-              <a href="" class="pagination-item__link">5</a>
-            </li>
-            <li class="pagination-item">
               <a href="" class="pagination-item__link">...</a>
             </li>
             <li class="pagination-item">
-              <a href="" class="pagination-item__link">14</a>
+              <a href="" class="pagination-item__link">7</a>
             </li>
 
             <li class="pagination-item">
@@ -287,7 +418,6 @@
     </section>
     <!-- ./ End Courses Area section -->
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="row">
@@ -308,7 +438,7 @@
               </div>
               <!-- ends: .section-header -->
               <div class="get_s_btn">
-                <a href="#" title="">Bắt đầu ngay</a>
+                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=n7jxBugHT0a0COwbRXA_McxTJvnd-4NEq_RG4A0uxpxUMFJSWkg3RkJHSko2UTZUNjg0VVJXTDhHQS4u" title="">Bắt đầu ngay</a>
               </div>
               <img src="images/shapes/bubble_shpe_2.png" alt="" class="shape_t_1" />
             </div>
@@ -327,7 +457,7 @@
                 <h3>Liên kết hữu ích</h3>
                 <ul class="location_info quick_inf0">
                   <li><a href="#">Về chúng tôi</a></li>
-                  <li><a href="#">Blog</a></li>
+                  <li><a href="blog.html">Blog</a></li>
                   <li><a href="#">Nhà phát triển</a></li>
                   <li><a href="#">Dịch vụ</a></li>
                   <li><a href="#">Liên hệ</a></li>
@@ -338,11 +468,10 @@
               <div class="footer_single_col information">
                 <h3>Thông tin</h3>
                 <ul class="quick_inf0">
-                  <li><a href="#">Tham quan khuôn viên trường</a></li>
+                  <li><a href="https://www.hust.edu.vn/">Thông tin về trường</a></li>
                   <li><a href="#">Cuộc sống sinh viên</a></li>
                   <li><a href="#">Học bổng</a></li>
-                  <li><a href="#">Đầu vào</a></li>
-                  <li><a href="#">Khả năng lãnh đạo</a></li>
+                  <li><a href="#">Thi đánh giá năng lực</a></li>
                 </ul>
               </div>
             </div>
@@ -351,8 +480,8 @@
                 <h3>Liên hệ chúng tôi</h3>
                 <p>Vui lòng liên hệ với chúng tôi qua Điện thoại hoặc gửi tin nhắn cho chúng tôi.</p>
                 <div class="contact_info">
-                  <span>+000 124 325</span>
-                  <span class="email">eduwise@gmail.com</span>
+                  <span>010 111 777</span>
+                  <span class="email">nhathuy@gmail.com</span>
                 </div>
                 <ul class="social_items d-flex list-unstyled">
                   <li>
