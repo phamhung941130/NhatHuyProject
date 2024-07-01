@@ -265,19 +265,33 @@
 
         <div class="col-12 col-sm-6 col-md-6 col-lg-4">
           <div class="single-courses">
-            <div class="courses_banner_wrapper">
-              <div class="courses_banner">
-                <a href="/course_IT.html"><img src="images/courses/lập trình.jfif" alt="" class="img-fluid" /></a>
+              <div class="courses_banner_wrapper">
+                  <div class="courses_banner">
+                      <a href="/course_IT.html" class="course-link">
+                          <img src="images/courses/lập trình.jfif" alt="" class="img-fluid" />
+                      </a>
+                  </div>
               </div>
-            </div>
-            <div class="courses_info_wrapper">
-              <div class="courses_title" style="text-align: center">
-                <h3><a href="/course_IT.html">Khóa Học Lập Trình Java</a></h3>
+              <div class="courses_info_wrapper">
+                  <div class="courses_title" style="text-align: center">
+                      <h3><a href="/course_IT.html" class="course-link">Khóa Học Lập Trình Java</a></h3>
+                  </div>
               </div>
-            </div>
           </div>
-          <!-- Ends: .single courses -->
-        </div>
+      </div>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              const courseLinks = document.querySelectorAll('.course-link');
+  
+              courseLinks.forEach(link => {
+                  link.addEventListener('click', function (event) {
+                      event.preventDefault();
+                      alert('Hãy đăng nhập để bắt đầu');
+                  });
+              });
+          });
+      </script>
         <!-- Ends: . -->
 
         <div class="col-12 col-sm-6 col-md-6 col-lg-4">
@@ -318,7 +332,7 @@
           <div class="single-courses">
             <div class="courses_banner_wrapper">
               <div class="courses_banner">
-                <a href="/course_GiaiTich.html"><img src="images/courses/giải tích.png" alt="" class="img-fluid" /></a>
+                <a href="/course_GiaiTich.html"><img src="images/courses/TaiLieu/giai-tich-3.jpg" alt="" class="img-fluid" /></a>
               </div>
             </div>
             <div class="courses_info_wrapper">
@@ -335,7 +349,7 @@
           <div class="single-courses">
             <div class="courses_banner_wrapper">
               <div class="courses_banner">
-                <a href="course_DaiSo.html"><img src="images/courses/đại số.jfif" alt="" class="img-fluid" /></a>
+                <a href="course_DaiSo.html"><img src="images/courses/TaiLieu/đại số.jpg" alt="" class="img-fluid" /></a>
               </div>
             </div>
             <div class="courses_info_wrapper">
