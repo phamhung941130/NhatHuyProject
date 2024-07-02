@@ -13,7 +13,7 @@ function checkLogin() {
   <span class="header__navbar-user-name">${fullName}</span>
   <ul class="header__navbar-user-menu">
     <li class="header__navbar-user-item"><a href="">My Account</a></li>
-    <li class="header__navbar-user-item"><a href="">Course</a></li>
+    <li class="header__navbar-user-item"><a href="videoCourse.html">My Course</a></li>
     <li class="header__navbar-user-item"><a href="">Setting</a></li>
     <li class="header__navbar-user-item"><a href="" onclick="logout()">Log Out</a></li>
   </ul>
