@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Management</title>
+  <style>
+    /* CSS để định dạng giao diện người dùng */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+    }
+    input {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Account Management</h1>
+  
+  <form id="updateAccountForm">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" readonly><br>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    
+    <label for="role">Role:</label>
+    <input type="text" id="role" name="role" required><br>
+    
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input type="date" id="dateOfBirth" name="dateOfBirth"><br>
+    
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address"><br>
+    
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName"><br>
+    
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone"><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    
+    <label for="accountStatus">Account Status:</label>
+    <input type="text" id="accountStatus" name="accountStatus" required><br>
+
+    <button type="button" onclick="updateAccount()">Update Account</button>
+  </form>
+
+  <button type="button" onclick="deleteAccount()">Delete Account</button>
+  <button type="button" onclick="getAllAccounts()">Get All Accounts</button>
+
+  <h2>All Accounts</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Role</th>
+        <th>Date of Birth</th>
+        <th>Address</th>
+        <th>Full Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Account Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="accountsTableBody">
+      <!-- Các tài khoản sẽ được hiển thị ở đây -->
+    </tbody>
+  </table>
+
+  <script>
+    function getToken() {
+      return localStorage.getItem('token'); // Thay thế bằng cách bạn lưu trữ token
+    }
+
+    async function updateAccount() {
+      const id = document.getElementById('id').value;
+      const username = document.getElementById('username').value;
+      const role = document.getElementById('role').value;
+      const dateOfBirth = document.getElementById('dateOfBirth').value;
+      const address = document.getElementById('address').value;
+      const fullName = document.getElementById('fullName').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const accountStatus = document.getElementById('accountStatus').value;
+
+      try {
+        const response = await fetch('http://localhost:7777/api/v1/account/update', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + getToken(),
+          },
+          body: JSON.stringify({ id, username, role, dateOfBirth, address, fullName, phone, email, accountStatus }),
+        });
+
+        if (response.ok) {
+          alert('Account updated successfully');
+          getAllAccounts(); // Cập nhật lại danh sách tài khoản sau khi cập nhật
+        } else {
+          alert('Failed to update account');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to update account');
+      }
+    }
+
+    async function deleteAccount() {
+      const id = prompt('Enter Account ID to delete:');
+      if (!id) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`http://localhost:7777/api/v1/account/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': 'Bearer ' + getToken(),
+          },
+        });
+
+        if (response.ok) {
+          alert('Account deleted successfully');
+          getAllAccounts(); // Cập nhật lại danh sách tài khoản sau khi xóa
+        } else {
+          alert('Failed to delete account');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to delete account');
+      }
+    }
+
+    async function getAllAccounts() {
+      try {
+        const response = await fetch('http://localhost:7777/api/v1/account/get-all', {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer ' + getToken(),
+          },
+        });
+
+        if (response.ok) {
+          const accounts = await response.json();
+          const tableBody = document.getElementById('accountsTableBody');
+          tableBody.innerHTML = ''; // Xóa nội dung cũ
+
+          accounts.forEach(account => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${account.id}</td>
+              <td>${account.username}</td>
+              <td>${account.role}</td>
+              <td>${account.dateOfBirth}</td>
+              <td>${account.address}</td>
+              <td>${account.fullName}</td>
+              <td>${account.phone}</td>
+              <td>${account.email}</td>
+              <td>${account.accountStatus}</td>
+              <td>
+                <button onclick="editAccount(${account.id})">Edit</button>
+              </td>
+            `;
+            tableBody.appendChild(row);
+          });
+        } else {
+          alert('Failed to fetch accounts');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to fetch accounts');
+      }
+    }
+
+    async function editAccount(id) {
+      try {
+        const response = await fetch(`http://localhost:7777/api/v1/account/${id}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer ' + getToken(),
+          },
+        });
+
+        if (response.ok) {
+          const account = await response.json();
+          document.getElementById('id').value = account.id;
+          document.getElementById('username').value = account.username;
+          document.getElementById('role').value = account.role;
+          document.getElementById('dateOfBirth').value = account.dateOfBirth ? account.dateOfBirth.split('T')[0] : '';
+          document.getElementById('address').value = account.address;
+          document.getElementById('fullName').value = account.fullName;
+          document.getElementById('phone').value = account.phone;
+          document.getElementById('email').value = account.email;
+          document.getElementById('accountStatus').value = account.accountStatus;
+        } else {
+          alert('Failed to fetch account details');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to fetch account details');
+      }
+    }
+  </script>
+</body>
+</html>

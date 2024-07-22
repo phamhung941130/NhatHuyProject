@@ -53,12 +53,7 @@ public class AuthController {
         // Mã hoá mật khẩu rồi lưu vào DB
         String passwordEncoder = new BCryptPasswordEncoder().encode(createDto.getPassword());
         account.setPassword(passwordEncoder);
-        // Thêm logic mail để kích hoạt tài khoản
-        String subject = "KÍCH HOẠT TÀI KHOẢN!";
-        String api = "http://localhost:8888/api/v1/auth/active/" + account.getId();
-        String content = "<img src=\"https://hrchannels.com/Upload/avatar/20210302/170452847_vmo1.jpg\">\n" +
-                "<div>Bạn đã đăng ký tài khoản trên VMO. Để kích hoạt tài khoản, <a href=\""+ api +"\" target=\"_blank\">Click vào đây</a><div>";
-        mailSenderService.sendMessageWithAttachment(account.getEmail(), subject, content);
+
         return accountRepository.save(account);
     }
 

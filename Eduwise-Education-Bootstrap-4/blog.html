@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/assets/bootstrap.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awsome CSS -->
     <link rel="stylesheet" href="css/assets/font-awesome.min.css" />
     <link rel="stylesheet" href="css/assets/flaticon.css" />
@@ -25,12 +26,19 @@
     <link rel="stylesheet" href="css/assets/animate.css" />
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="css/assets/slick.css" />
+    <link rel="stylesheet" href="css/assets/preloader.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="css/assets/revolution/layers.css" />
+    <link rel="stylesheet" href="css/assets/revolution/navigation.css" />
+    <link rel="stylesheet" href="css/assets/revolution/settings.css" />
     <!-- Mean Menu-->
     <link rel="stylesheet" href="css/assets/meanmenu.css" />
     <!-- main style-->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/sales.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,7 +47,7 @@
     <![endif]-->
   </head>
   <body>
-    <header class="header_inner blog_page">
+    <header class="header_four">
       <!-- Preloader -->
       <div id="preloader">
         <div id="status">&nbsp;</div>
@@ -51,7 +59,7 @@
               <div class="info_wrapper">
                 <div class="contact_info">
                   <ul class="list-unstyled">
-                    <li><i class="flaticon-phone-receiver"></i>010117777</li>
+                    <li><i class="flaticon-phone-receiver"></i>010 111 777</li>
                     <li><i class="flaticon-mail-black-envelope-symbol"></i>nhathuy@gmail.com</li>
                   </ul>
                 </div>
@@ -93,8 +101,8 @@
                     <li class="nav-item"><a href="course_IT.html" class="nav-link">Lập Trình</a></li>
                     <li class="nav-item"><a href="course_softSkills.html" class="nav-link">Kỹ Năng Mềm</a></li>
                     <li class="nav-item"><a href="course_English.html" class="nav-link">Ngoại Ngữ</a></li>
-                    <li class="nav-item"><a href="course_GiaiTich.html" class="nav-link">Giải Tích</a></li>
-                    <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Đại Số</a></li>
+                    <li class="nav-item"><a href="course_GiaiTich.html" class="nav-link">Toán đại cương</a></li>
+                    <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Chuyên Ngành</a></li>
                 
                   </ul>
                 </li>
@@ -103,28 +111,39 @@
                 </li>
                 <li class="nav-item"><a href="taiLieu.html" class="nav-link active">Tài Liệu</a></li>
                 <li class="nav-item"><a href="sale.html" class="nav-link active">Khuyến Mãi</a></li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">Bài tập tự luyện</a>
+                  <ul class="navbar-nav nav mx-auto">
+                    <li class="nav-item"><a href="HtmlBaitap/BoDeAnh.html" class="nav-link">Ngoại ngữ</a></li>
+                    <li class="nav-item"><a href="course_softSkills.html" class="nav-link">Kỹ Năng Mềm</a></li>
+                    <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Toán đại cương</a></li>
+                    <li class="nav-item"><a href="course_IT.html" class="nav-link">Lập trình</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Chuyên Ngành</a></li>
+                
+                  </ul>
+                </li>
               </ul>
             </div>
           </nav>
           <!-- END NAVBAR -->
-        </div>
       </div>
+    </div>
 
-      <div class="intro_wrapper">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-8 col-lg-8">
-              <div class="intro_text">
-                <h1>Blog Standard</h1>
-                <div class="pages_links">
-                  <a href="#" title="">Home</a>
-                  <a href="#" title="" class="active">Blog</a>
-                </div>
+    <div class="intro_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-8">
+            <div class="intro_text">
+              <h1>Blog Standard</h1>
+              <div class="pages_links">
+                <a href="#" title="">Home</a>
+                <a href="#" title="" class="active">Blog</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </header>
     <!-- End Header -->
 
@@ -548,5 +567,6 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js-Api/hearder.js"></script>
   </body>
 </html>

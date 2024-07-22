@@ -17,9 +17,6 @@ public class Order extends Base {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-//    @Column(name = "`QUANTITY`")
-//    private int quantity;
-
     @ManyToOne
     @JoinColumn(name = "ACCOUNT_ID")
     private Account account;

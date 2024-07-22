@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Thi Lập Trình</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        #showcase {
+            min-height: 400px;
+            background: url('https://source.unsplash.com/1600x900/?code') no-repeat 0 -400px;
+            text-align: center;
+            color: #50b3a2;
+        }
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        #showcase p {
+            font-size: 20px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .card h3 {
+            margin: 0;
+        }
+        .card p {
+            margin: 10px 0;
+        }
+        .card a {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #50b3a2;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .card a:hover {
+            background: #45a091;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #50b3a2;
+            color: #fff;
+            margin-top: 20px;
+            border-top: #e8491d 3px solid;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Lập Trình</span> Exam </h1>
+            </div>
+            <nav>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Luyện Thi Lập Trình Chuyên Nghiệp</h1>
+            <p>Các bộ đề luyện thi để giúp bạn trở thành lập trình viên chuyên nghiệp.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="quizzes" class="content">
+            <h2>Bộ Đề Luyện Thi Lập Trình</h2>
+
+            <div class="card">
+                <h3>Đề Thi Java Cơ Bản</h3>
+                <p>Luyện tập các kiến thức cơ bản về Java, từ cú pháp đến các khái niệm nền tảng.</p>
+                <a href="/HtmlBaitap/JavaBasicExam.html">Bắt đầu luyện thi</a>
+            </div>
+
+            <div class="card">
+                <h3>Đề Thi Python Cơ Bản</h3>
+                <p>Luyện tập các kiến thức cơ bản về Python, từ cú pháp đến các khái niệm nền tảng.</p>
+                <a href="#">Bắt đầu luyện thi</a>
+            </div>
+
+            <div class="card">
+                <h3>Đề Thi C++ Cơ Bản</h3>
+                <p>Luyện tập các kiến thức cơ bản về C++, từ cú pháp đến các khái niệm nền tảng.</p>
+                <a href="#">Bắt đầu luyện thi</a>
+            </div>
+
+            <div class="card">
+                <h3>Đề Thi Java Nâng Cao</h3>
+                <p>Khám phá các chủ đề nâng cao trong Java, bao gồm lập trình đa luồng và các mẫu thiết kế.</p>
+                <a href="#">Bắt đầu luyện thi</a>
+            </div>
+
+            <div class="card">
+                <h3>Đề Thi Python Nâng Cao</h3>
+                <p>Khám phá các chủ đề nâng cao trong Python, bao gồm lập trình hướng đối tượng và các thư viện phổ biến.</p>
+                <a href="#">Bắt đầu luyện thi</a>
+            </div>
+
+            <div class="card">
+                <h3>Đề Thi C++ Nâng Cao</h3>
+                <p>Khám phá các chủ đề nâng cao trong C++, bao gồm lập trình hướng đối tượng và quản lý bộ nhớ.</p>
+                <a href="#">Bắt đầu luyện thi</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Lập Trình Exam  &copy; 2024</p>
+    </footer>
+</body>
+</html>

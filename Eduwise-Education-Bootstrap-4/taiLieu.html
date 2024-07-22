@@ -15,23 +15,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/assets/bootstrap.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font awsome CSS -->
     <link rel="stylesheet" href="css/assets/font-awesome.min.css" />
     <link rel="stylesheet" href="css/assets/flaticon.css" />
     <link rel="stylesheet" href="css/assets/magnific-popup.css" />
-    
     <!-- owl carousel -->
     <link rel="stylesheet" href="css/assets/owl.carousel.css" />
     <link rel="stylesheet" href="css/assets/owl.theme.css" />
     <link rel="stylesheet" href="css/assets/animate.css" />
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="css/assets/slick.css" />
+    <link rel="stylesheet" href="css/assets/preloader.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="css/assets/revolution/layers.css" />
+    <link rel="stylesheet" href="css/assets/revolution/navigation.css" />
+    <link rel="stylesheet" href="css/assets/revolution/settings.css" />
     <!-- Mean Menu-->
     <link rel="stylesheet" href="css/assets/meanmenu.css" />
     <!-- main style-->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/sales.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,8 +101,8 @@
                     <li class="nav-item"><a href="course_IT.html" class="nav-link">Lập Trình</a></li>
                     <li class="nav-item"><a href="course_softSkills.html" class="nav-link">Kỹ Năng Mềm</a></li>
                     <li class="nav-item"><a href="course_English.html" class="nav-link">Ngoại Ngữ</a></li>
-                    <li class="nav-item"><a href="course_GiaiTich.html" class="nav-link">Giải Tích</a></li>
-                    <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Đại Số</a></li>
+                    <li class="nav-item"><a href="course_GiaiTich.html" class="nav-link">Toán đại cương</a></li>
+                    <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Chuyên Ngành</a></li>
                 
                   </ul>
                 </li>
@@ -104,6 +111,17 @@
                 </li>
                 <li class="nav-item"><a href="taiLieu.html" class="nav-link active">Tài Liệu</a></li>
                 <li class="nav-item"><a href="sale.html" class="nav-link active">Khuyến Mãi</a></li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">Bài tập tự luyện</a>
+                  <ul class="navbar-nav nav mx-auto">
+                    <li class="nav-item"><a href="HtmlBaitap/BoDeAnh.html" class="nav-link">Ngoại ngữ</a></li>
+                    <li class="nav-item"><a href="course_softSkills.html" class="nav-link">Kỹ Năng Mềm</a></li>
+                    <li class="nav-item"><a href="course_DaiSo.html" class="nav-link">Toán đại cương</a></li>
+                    <li class="nav-item"><a href="HtmlBaitap/BoDeIT.html" class="nav-link">Lập trình</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Chuyên Ngành</a></li>
+                
+                  </ul>
+                </li>
               </ul>
             </div>
           </nav>
@@ -227,27 +245,27 @@
     <!--========={ Our Instructiors }========-->
     <section class="our_instructors" id="instructors_page">
       <div class="container">
-
-      
-          <div class="row">
-              <div class="single-wrappe col-12 col-sm-6 col-md-4 col-lg-4">
-                  <div class="team-single-item">
-                      <figure>
-                          <div class="taiLieu-img">
-                              <div class="taiLieu_pro">
-                                  <img src="images/courses/TaiLieu/GIAI-TICH-1.jpg" alt="member img" class="img-fluid" />
-                              </div>
-                          </div>
-                          <figcaption>
-                              <div class="member-name">
-                                  <h4><a href="/Talieu/Giaitich1.html" title="">Tài liệu giải tích 1</a></h4>
-                                  <span>Thầy Nguyễn Duy</span>
-                              </div>
-                          </figcaption>
-                      </figure>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm tài liệu..." onkeyup="searchTaiLieu()">
+        </div>
+        <div class="row" id="taiLieuContainer">
+          <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="team-single-item">
+              <figure>
+                <div class="taiLieu-img">
+                  <div class="taiLieu_pro">
+                    <img src="images/courses/TaiLieu/GIAI-TICH-1.jpg" alt="member img" class="img-fluid" />
                   </div>
-              </div>
-
+                </div>
+                <figcaption>
+                  <div class="member-name">
+                    <h4><a href="https://drive.google.com/drive/folders/1-oUvZjL4op9IdsDSPhyYuQpKnlmmWE09" title="">Tài liệu giải tích 1</a></h4>
+                    <span>Thầy Nguyễn Duy</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
          
 
           <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
@@ -356,6 +374,155 @@
     </div>
 
     </section>
+    <style>
+      .search-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+  
+      #searchInput {
+        width: 50%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+  
+      #searchInput:focus {
+        border-color: #007bff;
+        box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+        outline: none;
+      }
+    </style>
+
+    <script>
+      function searchTaiLieu() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const taiLieuItems = document.querySelectorAll('#taiLieuContainer .single-wrapper');
+      
+        taiLieuItems.forEach(item => {
+          const title = item.querySelector('.member-name h4').innerText.toLowerCase();
+          if (title.includes(input)) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+      </script>
+
+<style>
+  .course-comments {
+    margin-top: 50px;
+  }
+
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #commentInput {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  #commentInput:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  .comment-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .comment-form button:hover {
+    background-color: #0056b3;
+  }
+
+  .comments-list {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .comment-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .comment-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .comment-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+<section class="course-comments" id="comments_section">
+  <div class="container">
+    <h2>Bình luận về tài liệu</h2>
+    <div class="comment-form">
+      <textarea id="commentInput" placeholder="Nhập bình luận của bạn..."></textarea>
+      <button onclick="submitComment()">Gửi bình luận</button>
+    </div>
+    <div class="comments-list" id="commentsList">
+      <!-- Các bình luận sẽ được thêm vào đây -->
+    </div>
+  </div>
+</section>
+<script>
+  function submitComment() {
+    const commentInput = document.getElementById('commentInput');
+    const commentText = commentInput.value.trim();
+
+    if (commentText) {
+      const commentsList = document.getElementById('commentsList');
+
+      // Tạo phần tử bình luận mới
+      const commentItem = document.createElement('div');
+      commentItem.className = 'comment-item';
+      const commentAuthor = document.createElement('h4');
+      commentAuthor.innerText = 'Người dùng ẩn danh'; // Bạn có thể thay đổi tên tác giả ở đây
+      const commentContent = document.createElement('p');
+      commentContent.innerText = commentText;
+
+      // Thêm tên và nội dung bình luận vào phần tử bình luận mới
+      commentItem.appendChild(commentAuthor);
+      commentItem.appendChild(commentContent);
+
+      // Thêm bình luận mới vào danh sách bình luận
+      commentsList.appendChild(commentItem);
+
+      // Xóa nội dung trong ô nhập bình luận
+      commentInput.value = '';
+    } else {
+      alert('Vui lòng nhập bình luận trước khi gửi!');
+    }
+  }
+</script>
 
     
     <!-- ./ End Our Instructiors -->
@@ -478,6 +645,7 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js-Api/hearder.js"></script>
 
     <!-- =========================================================
          STYLE SWITCHER | ONLY FOR DEMO NOT INCLUDED IN MAIN FILES
