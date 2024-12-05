@@ -128,16 +128,17 @@
           <!-- END NAVBAR -->
         </div>
       </div>
-      <div class="header_inner" id="header_inner">
+      <div class="header_inner blog_page" id="header_inner">
         <div class="intro_wrapper">
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-8 col-lg-8">
                 <div class="intro_text">
-                  <h1>Khuyến Mại</h1>
+                  <h1>Tài Liệu</h1>
                   <div class="pages_links">
                     <a href="index.html" title="">Trang Chủ</a>
-                    <a href="#" title="" class="active">Khuyến mại</a>
+                    <a href="#" title="" class="active">Tài liệu</a>
+                    <a href="#" title="" class="active">Page_1</a>
                   </div>
                 </div>
               </div>
@@ -146,7 +147,7 @@
         </div>
       </div>
     </header>
-    <!-- End Header -->
+    <!-- End header -->
 
     <section class="login_signup_option">
       <div class="l-modal is-hidden--off-flow js-modal-shopify">
@@ -171,21 +172,21 @@
                       <div class="row">
                         <div class="col-12 col-lg-12 col-md-12 col-lg-12">
                           <div class="form-group">
-                            <label class="control-label">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Username" />
+                            <label class="control-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Username" />
                           </div>
                         </div>
                         <div class="col-12 col-lg-12 col-md-12 col-lg-12">
                           <div class="form-group">
                             <label class="control-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" />
+                            <input type="password" class="form-control" placeholder="Password" />
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-12 col-lg-12 col-md-12 col-lg-12 d-flex justify-content-between login_option">
                           <a href="forgot-password.html" title="" class="forget_pass">Forget Password ?</a>
-                          <button type="submit" class="btn btn-default login_btn" onclick="login()">Login</button>
+                          <button type="submit" class="btn btn-default login_btn">Login</button>
                         </div>
                         <div class="col-12 col-lg-12 col-md-12 col-lg-12">
                           <div class="social_login">
@@ -208,12 +209,6 @@
                         <div class="col-12 col-lg-12 col-md-12 col-lg-12">
                           <div class="form-group">
                             <label class="control-label">Name</label>
-                            <input type="text" class="form-control" placeholder="Fullname" />
-                          </div>
-                        </div>
-                        <div class="col-12 col-lg-12 col-md-12 col-lg-12">
-                          <div class="form-group">
-                            <label class="control-label">Username</label>
                             <input type="text" class="form-control" placeholder="Username" />
                           </div>
                         </div>
@@ -247,213 +242,290 @@
     </section>
     <!-- End Login Signup Option -->
 
-  </div>
-  <div id="banner">
-      <div class="box-left">
-          <h2>
-              <span>KHÓA HỌC JAVA <br>Giảm 25% cho thành viên mới </span>
-          </h2>
-          <p>Khóa học giá rẻ tốt nhất cho sinh viên</p>
-          <button id="registerButton">Đăng kí ngay</button>
-      </div>
-      <div class="to-bottom">
-          <a href="">
-              <img src="images/sales/to_bottom.png" alt="">
-          </a>
-      </div>
-  </div>
-  <!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-  document.getElementById('registerButton').addEventListener('click', function() {
-    alert('Hãy đăng nhập để bắt đầu');
-  });
-</script>
-  <section class="popular_courses">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="sub_title">
-            <h2>Các khóa học đang được giảm giá</h2>
-            <p>
-              Đừng để những giây phút chán nản làm ta chùn bước. Mỗi một bước đi là từng bước tiếp thu những tri thức của nhân loại tích lũy thành của riêng
-              bản thân mình.
-            </p>
-          </div>
-          <!-- ends: .section-header -->
+    <!--========={ Our Instructiors }========-->
+    <section class="our_instructors" id="instructors_page">
+      <div class="container">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm tài liệu..." onkeyup="searchTaiLieu()">
         </div>
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="single-courses">
-              <div class="courses_banner_wrapper">
-                  <div class="courses_banner">
-                      <a href="/course_IT.html" class="course-link">
-                          <img src="images/courses/lập trình.jfif" alt="" class="img-fluid" />
-                      </a>
+        <div class="row" id="taiLieuContainer">
+          <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="team-single-item">
+              <figure>
+                <div class="taiLieu-img">
+                  <div class="taiLieu_pro">
+                    <img src="images/courses/TaiLieu/GIAI-TICH-1.jpg" alt="member img" class="img-fluid" />
                   </div>
-              </div>
-              <div class="courses_info_wrapper">
-                  <div class="courses_title" style="text-align: center">
-                      <h3><a href="/course_IT.html" class="course-link">Khóa Học Lập Trình Java</a></h3>
+                </div>
+                <figcaption>
+                  <div class="member-name">
+                    <h4><a href="https://drive.google.com/drive/folders/1-oUvZjL4op9IdsDSPhyYuQpKnlmmWE09" title="">Tài liệu giải tích 1</a></h4>
+                    <span>Thầy Nguyễn Duy</span>
                   </div>
-              </div>
+                </figcaption>
+              </figure>
+            </div>
           </div>
+         
+
+          <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="team-single-item">
+              <figure>
+                <div class="taiLieu-img">
+                  <div class="taiLieu_pro">
+                    <img src="images/courses/TaiLieu/GIAI-TICH-2.jpg" alt="member img" class="img-fluid" />
+                  </div>
+                </div>
+                <figcaption>
+                  <div class="member-name">
+                    <h4><a href="#" title="">Tài Liệu Giải tích 2</a></h4>
+                    <span>Thầy Nguyễn Hải</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="team-single-item">
+              <figure>
+                <div class="taiLieu-img">
+                  <div class="taiLieu_pro">
+                    <img src="images/courses/TaiLieu/giai-tich-3.jpg" alt="member img" class="img-fluid" />
+                  </div>
+                </div>
+                <figcaption>
+                  <div class="member-name">
+                    <h4><a href="#" title="">Tài liệu Giải tích 3</a></h4>
+                    <span>Thẩy Nguyễn Hải</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="team-single-item">
+              <figure>
+                <div class="taiLieu-img">
+                  <div class="taiLieu_pro">
+                    <img src="images/courses/TaiLieu/xac-suat-thong-ke.jpg" alt="member img" class="img-fluid" />
+                  </div>
+                </div>
+                <figcaption>
+                  <div class="member-name">
+                    <h4><a href="#" title="">Xác suất thống kê</a></h4>
+                    <span>Cô Thùy Dương</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="team-single-item">
+              <figure>
+                <div class="taiLieu-img">
+                  <div class="taiLieu_pro">
+                    <img src="images/courses/TaiLieu/đại số.jpg" alt="member img" class="img-fluid" />
+                  </div>
+                </div>
+                <figcaption>
+                  <div class="member-name">
+                    <h4><a href="#" title="">Tài liệu đại số</a></h4>
+                    <span>Thầy Sơn</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="team-single-item">
+              <figure>
+                <div class="taiLieu-img">
+                  <div class="taiLieu_pro">
+                    <img src="images/courses/TaiLieu/VAT-LI-DAI-CUONG-1.jpg" alt="member img" class="img-fluid" />
+                  </div>
+                </div>
+                <figcaption>
+                  <div class="member-name">
+                    <h4><a href="#" title="">Vật lí Đại cương 1</a></h4>
+                    <span>Thầy Nguyễn Nam</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          
+        </div>
       </div>
-  
-      <script>
-          document.addEventListener('DOMContentLoaded', function () {
-              const courseLinks = document.querySelectorAll('.course-link');
-  
-              courseLinks.forEach(link => {
-                  link.addEventListener('click', function (event) {
-                      event.preventDefault();
-                      alert('Hãy đăng nhập để bắt đầu');
-                  });
-              });
-          });
-      </script>
-        <!-- Ends: . -->
 
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="single-courses">
-            <div class="courses_banner_wrapper">
-              <div class="courses_banner">
-                <a href="/course_softSkills.html"><img src="images/courses/kỹ năng mềm.jfif" alt="" class="img-fluid" /></a>
-              </div>
-            </div>
-            <div class="courses_info_wrapper">
-              <div class="courses_title" style="text-align: center">
-                <h3><a href="/course_softSkills.html">Các Khóa Học Kỹ Năng Mềm</a></h3>
-              </div>
-            </div>
-          </div>
-          <!-- Ends: .single courses -->
-        </div>
-        <!-- Ends: . -->
 
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="single-courses">
-            <div class="courses_banner_wrapper">
-              <div class="courses_banner">
-                <a href="/course_English.html"><img src="images/courses/tiếng anh.jfif" alt="" class="img-fluid" /></a>
-              </div>
-            </div>
-            <div class="courses_info_wrapper">
-              <div class="courses_title">
-                <h3><a href="/course_English.html">Khóa học Toeic</a></h3>
-              </div>
-            </div>
-          </div>
-          <!-- Ends: .single courses -->
-        </div>
-        <!-- Ends: . -->
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="single-courses">
-            <div class="courses_banner_wrapper">
-              <div class="courses_banner">
-                <a href="/course_GiaiTich.html"><img src="images/courses/TaiLieu/giai-tich-3.jpg" alt="" class="img-fluid" /></a>
-              </div>
-            </div>
-            <div class="courses_info_wrapper">
-              <div class="courses_title">
-                <h3><a href="/course_GiaiTich.html">Khóa Học Giải Tích III</a></h3>
-              </div>
-            </div>
-          </div>
-          <!-- Ends: .single courses -->
-        </div>
-        <!-- Ends: . -->
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="single-courses">
-            <div class="courses_banner_wrapper">
-              <div class="courses_banner">
-                <a href="course_DaiSo.html"><img src="images/courses/TaiLieu/đại số.jpg" alt="" class="img-fluid" /></a>
-              </div>
-            </div>
-            <div class="courses_info_wrapper">
-              <div class="courses_title">
-                <h3><a href="course_DaiSo.html">Khóa Học Đại Số </a></h3>
-              </div>
-            </div>
-          </div>
-          <!-- Ends: .single courses -->
-        </div>
-        <!-- Ends: . -->
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="single-courses">
-            <div class="courses_banner_wrapper">
-              <div class="courses_banner">
-                <a href="course_DoHoa.html"><img src="images/courses/đồ họa.jfif" alt="" class="img-fluid" /></a>
-              </div>
-            </div>
-            <div class="courses_info_wrapper">
-              <div class="courses_title">
-                <h3><a href="course_DoHoa.html">Khóa Học Đồ Họa</a></h3>
-              </div>
-            </div>
-          </div>
-          <!-- Ends: .single courses -->
-        </div>
-        <!-- Ends: . -->
+      <div class="pagination_blog">
+        <ul>
+          <li class="current"><a href="taiLieu.html">1</a></li>
+          <li><a href="Talieu2.html">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">...</a></li>
+          <li>
+            <a href="#" class=""><i class="flaticon-right-arrow"></i></a>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <div id="saleoff">
-      <div class="box-left">
-          <h1>
-              <span>GIẢM GIÁ LÊN ĐẾN</span>
-              <span>50%</span>
-          </h1>
-      </div>
-      <div class="box-right"></div>
-  </div>
-
-
-    <!--Start Courses Area Section-->
-    <section class="popular_courses" id="popular_courses_page">
-      <div class="container">
-        <div id="button-add"></div>
-        <div class="row" id="course_item">
-         
-        </div>
-        <div>
-          <ul class="pagination home-product__pagination" id="pagination">
-            <li class="pagination-item">
-              <a href="#" class="pagination-item__link" onclick="prePage()">
-                <i class="pagination-item__icon fas fa-angle-left"></i>
-              </a>
-            </li>
-
-            <li class="pagination-item pagination-item--active">
-              <a href="" class="pagination-item__link">1</a>
-            </li>
-            <li class="pagination-item">
-              <a href="" class="pagination-item__link">2</a>
-            </li>
-            <li class="pagination-item">
-              <a href="" class="pagination-item__link">...</a>
-            </li>
-            <li class="pagination-item">
-              <a href="" class="pagination-item__link">7</a>
-            </li>
-
-            <li class="pagination-item">
-              <a href="#" class="pagination-item__link" onclick="nextPage()">
-                <i class="pagination-item__icon fas fa-angle-right"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </section>
-    <!-- ./ End Courses Area section -->
+    <style>
+      .search-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+  
+      #searchInput {
+        width: 50%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+  
+      #searchInput:focus {
+        border-color: #007bff;
+        box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+        outline: none;
+      }
+    </style>
+
+    <script>
+      function searchTaiLieu() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const taiLieuItems = document.querySelectorAll('#taiLieuContainer .single-wrapper');
+      
+        taiLieuItems.forEach(item => {
+          const title = item.querySelector('.member-name h4').innerText.toLowerCase();
+          if (title.includes(input)) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+      </script>
+
+<style>
+  .course-comments {
+    margin-top: 50px;
+  }
+
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #commentInput {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  #commentInput:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  .comment-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .comment-form button:hover {
+    background-color: #0056b3;
+  }
+
+  .comments-list {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .comment-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .comment-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .comment-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+<section class="course-comments" id="comments_section">
+  <div class="container">
+    <h2>Bình luận về tài liệu</h2>
+    <div class="comment-form">
+      <textarea id="commentInput" placeholder="Nhập bình luận của bạn..."></textarea>
+      <button onclick="submitComment()">Gửi bình luận</button>
+    </div>
+    <div class="comments-list" id="commentsList">
+      <!-- Các bình luận sẽ được thêm vào đây -->
+    </div>
+  </div>
+</section>
+<script>
+  function submitComment() {
+    const commentInput = document.getElementById('commentInput');
+    const commentText = commentInput.value.trim();
+
+    if (commentText) {
+      const commentsList = document.getElementById('commentsList');
+
+      // Tạo phần tử bình luận mới
+      const commentItem = document.createElement('div');
+      commentItem.className = 'comment-item';
+      const commentAuthor = document.createElement('h4');
+      commentAuthor.innerText = 'Người dùng ẩn danh'; // Bạn có thể thay đổi tên tác giả ở đây
+      const commentContent = document.createElement('p');
+      commentContent.innerText = commentText;
+
+      // Thêm tên và nội dung bình luận vào phần tử bình luận mới
+      commentItem.appendChild(commentAuthor);
+      commentItem.appendChild(commentContent);
+
+      // Thêm bình luận mới vào danh sách bình luận
+      commentsList.appendChild(commentItem);
+
+      // Xóa nội dung trong ô nhập bình luận
+      commentInput.value = '';
+    } else {
+      alert('Vui lòng nhập bình luận trước khi gửi!');
+    }
+  }
+</script>
+
+    
+    <!-- ./ End Our Instructiors -->
 
     <footer>
       <div class="container">
@@ -557,81 +629,7 @@
         <a href="#"><i class="flaticon-right-arrow"></i></a>
       </div>
     </section>
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close" onclick="hideModal()" style="color: antiquewhite">&times;</span>
-        <h2 style="color: antiquewhite; text-align: center" id="title">TẠO MỚI</h2>
-        <span style="display: flex; justify-content: space-between">
-          <span
-            ><span><label>*ID:</label> <input type="number" placeholder="ID khóa học cần update..." id="id" /></span
-          ></span>
-          <span><label>*Tên Khóa Học:</label> <input type="text" placeholder="Nhập tên khóa học..." id="nameCourse" /></span>
-        </span>
-        <span style="display: flex; justify-content: space-between">
-          <span
-            ><span
-              ><label>*Kiểu Khóa Học:</label>
-              <select style="background-color: white; width: 187px" id="courseType" placeholder="Chọn kiểu khóa học...">
-                <option>LAPTRINH</option>
-                <option>SOFT_SKILL</option>
-                <option>ENGLIGH</option>
-                <option>GIAITICH</option>
-                <option>DAISO</option>
-                <option>DOHOA</option>
-              </select></span
-            ></span
-          >
-          <span><label>*Trạng Thái:</label> <input type="text" placeholder="Nhập trạng thái khóa học..." id="status" /></span>
-        </span>
-        <span style="display: flex; justify-content: space-between">
-          <span><label>*Giá Khóa Học:</label> <input type="number" placeholder="Nhập giá..." id="price" /></span>
-          <span><label>*Số Buổi Học:</label> <input type="number" placeholder="Nhập số buổi học..." id="lessionNumber" /></span>
-        </span>
-        <span style="display: flex; justify-content: space-between">
-          <span><label>*Số Học Viên Tối Đa:</label> <input type="number" placeholder="Nhập số lượng học sinh..." id="studentNumber" /></span>
-          <span><label>*Giảng Viên:</label> <input type="number" placeholder="Nhập ID giáo viên..." id="teacherId" /></span>
-        </span>
-        <label>*Ảnh Khóa Học:</label>
-        <input type="text" placeholder="Nhập link ảnh..." id="image" />
-        <label>*Mô Tả:</label>
-        <input type="text" placeholder="Nhập mô tả nội dung khóa học..." id="description" />
-        <br />
-        <div style="display: inline-block">
-          <button class="btn btn-primary" style="display: inline-block" onclick="saveCourse()">Thực Hiện</button>
-          <button class="btn btn-primary" style="display: inline-block" onclick="hideModal()">Hủy Bỏ</button>
-        </div>
-      </div>
-    </div>
-    <!-- Modal Confirm Delete -->
 
-  <div id="modalConfirmDelete" class="modal">
-    <span class="close" style="color: antiquewhite" onclick="document.getElementById('modalConfirmDelete').style.display='none'">&times;</span>
-    <form class="modal-content">
-      <div class="container">
-        <input type="hidden" id="filmIdDelete" name="id">
-        <h1>Delete Course</h1>
-        <p>Are you sure you want to delete course?</p>
-        <div class="clearfix">
-          <button type="button" onclick="document.getElementById('modalConfirmDelete').style.display='none'" class="cancelbtn">Cancel</button>
-          <button type="button" onclick="deleteCourse()" class="deletebtn">Delete</button>
-        </div>
-      </div>
-    </form>
-  </div>
-
-  <!-- Modal Login Alert -->
-  <div id="loginAlert" class="modal" >
-    <!-- Modal content -->
-    <div class="modal-content" style="text-align: center;">
-      <span class="close" onclick="document.getElementById('loginAlert').style.display='none';">&times;</span>
-      <h2 >LOGIN ALERT</h2>
-      <p>You have to login or signup to write your review</p>
-      <div style="display: inline-block;">
-        <button  class="btn btn-primary" style="display: inline-block;" onclick="document.getElementById('loginAlert').style.display='none';">Cancel</button>
-      </div>
-      
-    </div>
     <!-- JavaScript -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -640,15 +638,14 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/page-smoth-scroll.js"></script>
     <script src="js/wow.min.js"></script>
+    
     <!-- Counter Script -->
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js-Api/load.js"></script>
     <script src="js-Api/hearder.js"></script>
-    <script src="js-Api/login.js"></script>
-    <script src="js-Api/course_IT.js"></script>
 
     <!-- =========================================================
          STYLE SWITCHER | ONLY FOR DEMO NOT INCLUDED IN MAIN FILES

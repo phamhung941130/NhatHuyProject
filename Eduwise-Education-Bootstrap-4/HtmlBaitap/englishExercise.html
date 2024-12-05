@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thi trắc nghiệm Tiếng Anh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .answers {
+            list-style: none;
+            padding: 0;
+        }
+        .answer {
+            margin: 5px 0;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .comments {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .comment-list {
+            margin-bottom: 20px;
+        }
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #d3d1d1;
+            border-radius: 5px;
+        }
+        .comment p {
+            margin: 0;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #eee8e8;
+            color: #0e0d0d;
+            resize: vertical;
+        }
+        .comment-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comment-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+<script>
+    function addComment() {
+        const commentInput = document.getElementById('commentInput');
+        const commentList = document.getElementById('commentList');
+
+        if (commentInput.value.trim() !== '') {
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = '<p><strong>Người dùng:</strong> ' + commentInput.value + '</p>';
+            commentList.appendChild(newComment);
+            commentInput.value = '';
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <h1>Thi trắc nghiệm Tiếng Anh</h1>
+        <div id="quiz">
+            <!-- Câu hỏi 1 -->
+            <div class="question" id="question1">
+                <div class="question-title">1. What is the capital of the United Kingdom?</div>
+                <ul class="answers">
+                    <li class="answer"><input type="radio" name="question1" value="A"> A. Paris</li>
+                    <li class="answer"><input type="radio" name="question1" value="B"> B. London</li>
+                    <li class="answer"><input type="radio" name="question1" value="C"> C. Berlin</li>
+                    <li class="answer"><input type="radio" name="question1" value="D"> D. Madrid</li>
+                </ul>
+            </div>
+            <!-- Câu hỏi 2 -->
+            <div class="question" id="question2">
+                <div class="question-title">2. Which word is a synonym of "happy"?</div>
+                <ul class="answers">
+                    <li class="answer"><input type="radio" name="question2" value="A"> A. Sad</li>
+                    <li class="answer"><input type="radio" name="question2" value="B"> B. Angry</li>
+                    <li class="answer"><input type="radio" name="question2" value="C"> C. Joyful</li>
+                    <li class="answer"><input type="radio" name="question2" value="D"> D. Tired</li>
+                </ul>
+            </div>
+            <!-- Câu hỏi 3 -->
+            <div class="question" id="question3">
+                <div class="question-title">3. What is the opposite of "hot"?</div>
+                <ul class="answers">
+                    <li class="answer"><input type="radio" name="question3" value="A"> A. Cold</li>
+                    <li class="answer"><input type="radio" name="question3" value="B"> B. Warm</li>
+                    <li class="answer"><input type="radio" name="question3" value="C"> C. Hotter</li>
+                    <li class="answer"><input type="radio" name="question3" value="D"> D. Cool</li>
+                </ul>
+            </div>
+            <!-- Câu hỏi 4 -->
+            <div class="question" id="question4">
+                <div class="question-title">4. What is the past tense of "see"?</div>
+                <ul class="answers">
+                    <li class="answer"><input type="radio" name="question4" value="A"> A. Saw</li>
+                    <li class="answer"><input type="radio" name="question4" value="B"> B. Seed</li>
+                    <li class="answer"><input type="radio" name="question4" value="C"> C. Sees</li>
+                    <li class="answer"><input type="radio" name="question4" value="D"> D. Seen</li>
+                </ul>
+            </div>
+            <!-- Câu hỏi 5 -->
+            <div class="question" id="question5">
+                <div class="question-title">5. Which word is an adjective?</div>
+                <ul class="answers">
+                    <li class="answer"><input type="radio" name="question5" value="A"> A. Blue</li>
+                    <li class="answer"><input type="radio" name="question5" value="B"> B. Eat</li>
+                    <li class="answer"><input type="radio" name="question5" value="C"> C. Cat</li>
+                    <li class="answer"><input type="radio" name="question5" value="D"> D. Slowly</li>
+                </ul>
+            </div>
+
+            <button class="submit-btn" onclick="submitQuiz()">Nộp bài</button>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <div class="comments">
+        <h2>Bình luận</h2>
+        <div id="commentList" class="comment-list">
+    
+            <!-- More comments will be added here -->
+        </div>
+        <div class="comment-form">
+            <textarea id="commentInput" placeholder="Viết bình luận của bạn..."></textarea>
+            <button onclick="addComment()">Gửi bình luận</button>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            // Lấy giá trị của câu trả lời
+            const answers = {};
+            for (let i = 1; i <= 5; i++) {
+                const question = document.querySelector(`input[name="question${i}"]:checked`);
+                if (question) {
+                    answers[`question${i}`] = question.value;
+                } else {
+                    alert("Vui lòng trả lời tất cả các câu hỏi!");
+                    return;
+                }
+            }
+
+            // Đáp án đúng
+            const correctAnswers = {
+                question1: "B",
+                question2: "C",
+                question3: "A",
+                question4: "A",
+                question5: "A"
+            };
+
+            // Tính điểm
+            let score = 0;
+            for (let i = 1; i <= 5; i++) {
+                if (answers[`question${i}`] === correctAnswers[`question${i}`]) {
+                    score++;
+                }
+            }
+
+            // Hiển thị kết quả
+            const totalQuestions = 5;
+            const result = document.getElementById('result');
+            result.innerHTML = `Điểm số ${score} / ${totalQuestions}.`;
+
+            // Hiển thị đáp án đúng và sai
+            for (let i = 1; i <= 5; i++) {
+                displayAnswers(`question${i}`, answers[`question${i}`], correctAnswers[`question${i}`]);
+            }
+        }
+
+        function displayAnswers(questionId, selectedAnswer, correctAnswer) {
+            const questionElement = document.getElementById(questionId);
+            const answerElements = questionElement.querySelectorAll('.answer');
+            answerElements.forEach(answerElement => {
+                const input = answerElement.querySelector('input');
+                if (input.value === correctAnswer) {
+                    answerElement.classList.add('correct');
+                    answerElement.innerHTML += ' ✓';
+                } else if (input.value === selectedAnswer) {
+                    answerElement.classList.add('incorrect');
+                    answerElement.innerHTML += ' ✗';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

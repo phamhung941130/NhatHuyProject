@@ -9,8 +9,8 @@ function AccountSignUp(username, password, fullName, dateOfBirth, phoneNumber, e
   this.username = username;
   this.password = password;
   this.fullName = fullName;
-  this.dateOfBirth = dateOfBirth;
-  this.phoneNumber = phoneNumber;
+  // this.dateOfBirth = dateOfBirth;
+  // this.phoneNumber = phoneNumber;
   this.email = email;
 }
 
@@ -19,29 +19,29 @@ function signUp() {
   let username = document.getElementById("username-su").value;
   let password = document.getElementById("password-su").value;
   let fullName = document.getElementById("fullName-su").value;
-  let dateOfBirth = document.getElementById("dateOfBirth-su").value;
-  let phoneNumber = document.getElementById("phoneNumber-su").value;
+  // let dateOfBirth = document.getElementById("dateOfBirth-su").value;
+  // let phoneNumber = document.getElementById("phoneNumber-su").value;
   let email = document.getElementById("email-su").value;
 
-  let account = new AccountSignUp(username, password, fullName, dateOfBirth, phoneNumber, email);
+  let account = new AccountSignUp(username, password, fullName, email);
 
   //   ------------------------------------- CALL API ĐĂNG KÝ -------------------------------------
   $.ajax({
-    url: baseUrlAuth + "/account/create",
+    url: baseUrlAuth + "/auth/register",
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify(account),
     error: function (err) {
-      console.log(err);
-      confirm(err.responseJSON.message);
+        console.log(err)
+        confirm(err.responseJSON.message)
     },
     success: function (data) {
-      console.log(data);
-      // window.location.href = "./index.html"
-      window.location.href = "./login.html";
-    },
-  });
-  window.location.href = "./login.html";
+        console.log(data)
+        window.location.href = "./index.html"
+       
+    }
+});
+
 }
 
 function login() {

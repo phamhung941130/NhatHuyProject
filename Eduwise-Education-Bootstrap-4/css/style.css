@@ -2111,20 +2111,20 @@ footer {
     .our_instructors .team-single-item figure {
       text-align: center;
       background: #ffffff; }
-      .our_instructors .team-single-item figure:hover .member-img:before {
+      .our_instructors .team-single-item figure:hover .taiLieu-img:before {
         opacity: 0.20; }
-      .our_instructors .team-single-item figure:hover .member-img img {
+      .our_instructors .team-single-item figure:hover .taiLieu-img img {
         -webkit-transform: scale(1);
                 transform: scale(1); }
       .our_instructors .team-single-item figure:hover figcaption .member-name h4 a {
         color: #ff5a2c; }
-      .our_instructors .team-single-item figure .member-img {
+      .our_instructors .team-single-item figure .taiLieu-img {
         -webkit-box-shadow: 9px 16px 46px 0px rgba(47, 47, 47, 0.2);
                 box-shadow: 9px 16px 46px 0px rgba(47, 47, 47, 0.2);
         margin: 0px auto; }
-        .our_instructors .team-single-item figure .member-img .teachars_pro {
+        .our_instructors .team-single-item figure .taiLieu-img .taiLieu_pro {
           overflow: hidden; }
-          .our_instructors .team-single-item figure .member-img .teachars_pro img {
+          .our_instructors .team-single-item figure .taiLieu-img .taiLieu_pro img {
             width: auto;
             -webkit-transform: scale(1.1);
                     transform: scale(1.1);
@@ -2216,13 +2216,13 @@ footer {
       line-height: 36px;
       margin: 25px 0 0;
       color: #ffffff; }
-    .testimonial_2 .testimonial_single .reviewer_info .member-img {
+    .testimonial_2 .testimonial_single .reviewer_info .taiLieu-img {
       height: 50px;
       width: 50px;
       overflow: hidden;
       border-radius: 5px;
       margin: 40px auto 30px; }
-      .testimonial_2 .testimonial_single .reviewer_info .member-img img {
+      .testimonial_2 .testimonial_single .reviewer_info .taiLieu-img img {
         height: auto;
         width: 100%; }
     .testimonial_2 .testimonial_single .reviewer_info h4 {

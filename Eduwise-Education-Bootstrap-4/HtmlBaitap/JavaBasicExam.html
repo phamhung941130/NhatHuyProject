@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề Thi Java Cơ Bản</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .question {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .question h3 {
+            margin: 0;
+        }
+        .question p {
+            margin: 10px 0;
+        }
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .btn-submit {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #50b3a2;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+            text-align: center;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background: #45a091;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        .explanation {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e3e3e3;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Lập Trình Java</span> Exam </h1>
+            </div>
+            <nav>
+            
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="content">
+            <h2>Đề Thi Java Cơ Bản</h2>
+
+            <div id="quiz">
+                <!-- Question 1 -->
+                <div class="question" id="question1">
+                    <h3>Câu 1: Từ khóa nào được sử dụng để kế thừa một lớp trong Java?</h3>
+                    <label><input type="radio" name="q1" value="a"> A. implements</label>
+                    <label><input type="radio" name="q1" value="b"> B. extends</label>
+                    <label><input type="radio" name="q1" value="c"> C. inherits</label>
+                    <label><input type="radio" name="q1" value="d"> D. imports</label>
+                    <div class="result" id="result1"></div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question" id="question2">
+                    <h3>Câu 2: Phương thức nào được gọi khi một đối tượng được tạo trong Java?</h3>
+                    <label><input type="radio" name="q2" value="a"> A. finalize</label>
+                    <label><input type="radio" name="q2" value="b"> B. static</label>
+                    <label><input type="radio" name="q2" value="c"> C. constructor</label>
+                    <label><input type="radio" name="q2" value="d"> D. main</label>
+                    <div class="result" id="result2"></div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question" id="question3">
+                    <h3>Câu 3: Trong Java, kiểu dữ liệu nào là không nguyên thủy?</h3>
+                    <label><input type="radio" name="q3" value="a"> A. int</label>
+                    <label><input type="radio" name="q3" value="b"> B. boolean</label>
+                    <label><input type="radio" name="q3" value="c"> C. char</label>
+                    <label><input type="radio" name="q3" value="d"> D. String</label>
+                    <div class="result" id="result3"></div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question" id="question4">
+                    <h3>Câu 4: Từ khóa nào được sử dụng để ngăn chặn việc lớp con ghi đè một phương thức của lớp cha?</h3>
+                    <label><input type="radio" name="q4" value="a"> A. abstract</label>
+                    <label><input type="radio" name="q4" value="b"> B. static</label>
+                    <label><input type="radio" name="q4" value="c"> C. final</label>
+                    <label><input type="radio" name="q4" value="d"> D. private</label>
+                    <div class="result" id="result4"></div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question" id="question5">
+                    <h3>Câu 5: Trong Java, từ khóa nào được sử dụng để xử lý ngoại lệ?</h3>
+                    <label><input type="radio" name="q5" value="a"> A. try</label>
+                    <label><input type="radio" name="q5" value="b"> B. catch</label>
+                    <label><input type="radio" name="q5" value="c"> C. throw</label>
+                    <label><input type="radio" name="q5" value="d"> D. All of the above</label>
+                    <div class="result" id="result5"></div>
+                </div>
+            </div>
+
+            <div class="btn-submit" onclick="submitQuiz()">Nộp bài</div>
+
+            <div id="score" style="display: none; margin-top: 20px;">
+                <h2>Điểm của bạn: <span id="scoreValue"></span>/5</h2>
+            </div>
+            
+        </section>
+    </div>
+
+    <footer>
+        <p>Lập Trình Exam Prep &copy; 2024</p>
+    </footer>
+
+    <script>
+        function submitQuiz() {
+    var answers = {
+        q1: 'b',
+        q2: 'c',
+        q3: 'd',
+        q4: 'c',
+        q5: 'd'
+    };
+
+    var explanations = {
+        q1: 'Từ khóa "extends" được sử dụng để kế thừa một lớp trong Java.',
+        q2: 'Phương thức "constructor" được gọi khi một đối tượng được tạo.',
+        q3: '"String" không phải là kiểu dữ liệu nguyên thủy trong Java.',
+        q4: 'Từ khóa "final" được sử dụng để ngăn chặn việc lớp con ghi đè một phương thức của lớp cha.',
+        q5: 'Từ khóa "try", "catch", và "throw" đều được sử dụng để xử lý ngoại lệ trong Java.'
+    };
+
+    var score = 0;
+
+    for (var i = 1; i <= 5; i++) {
+        var question = document.querySelector('input[name="q' + i + '"]:checked');
+        var result = document.getElementById('result' + i);
+        if (question) {
+            if (question.value === answers['q' + i]) {
+                result.innerHTML = '<span class="correct">Đúng</span><div class="explanation">' + explanations['q' + i] + '</div>';
+                score++;
+            } else {
+                result.innerHTML = '<span class="incorrect">Sai</span><div class="explanation">' + explanations['q' + i] + '</div>';
+            }
+        } else {
+            result.innerHTML = '<span class="incorrect">Bạn chưa chọn câu trả lời</span>';
+        }
+    }
+
+    document.getElementById('scoreValue').innerText = score;
+    document.getElementById('score').style.display = 'block';
+}
+
+    </script>
+</body>
+</html>

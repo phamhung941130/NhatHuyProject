@@ -32,7 +32,7 @@ public class AccountController {
         return accountService.create(dto);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+
     @PutMapping("/update")
     public Account update(@RequestBody AccountUpdateDTO dto) {
         return accountService.update(dto);
